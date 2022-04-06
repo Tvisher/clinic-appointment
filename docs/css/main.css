@@ -2948,7 +2948,6 @@ header {
 }
 
 .navigation__btn {
-  flex: 0 0 50%;
   margin: 0px 25px;
   color: #4C5563;
   font-size: 16px;
@@ -2956,6 +2955,7 @@ header {
   display: flex;
   justify-content: center;
   padding: 22px 0;
+  border-bottom: 3px solid transparent;
 }
 
 .navigation__btn.active {
@@ -2965,7 +2965,7 @@ header {
 
 .header__user {
   position: relative;
-  margin-right: 31px;
+  margin-left: 31px;
   display: flex;
   align-items: center;
   align-self: stretch;
@@ -3090,6 +3090,7 @@ body {
 }
 
 .date-range__date-list {
+  flex-wrap: wrap;
   margin-right: 10px;
   color: #4C5563;
   display: flex;
@@ -3147,7 +3148,7 @@ body {
 
 .date-range__wrapper {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 37px;
 }
@@ -3156,6 +3157,7 @@ body {
   position: relative;
   cursor: pointer !important;
   padding: 5px 0 10px;
+  flex: 0 0 auto;
 }
 
 .date-range__select .date-range__datapicker {
@@ -3233,11 +3235,16 @@ body {
 }
 
 .shedule-body__time .time {
+  padding: 5px 0;
   flex: 0 0 25%;
 }
 
 .shedule-body__time .patient {
   flex: 0 0 65%;
+}
+
+.shedule-body__time .patient__name {
+  padding: 5px 0;
 }
 
 .shedule-body__time .show-details {
@@ -3246,6 +3253,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  padding: 5px 0;
 }
 
 .shedule-body__time .show-details .show-details__text {
@@ -3388,6 +3396,10 @@ body {
     flex: 0 0 auto;
     min-width: 500px;
   }
+
+  .date-range__date-list .list-item {
+    margin-bottom: 10px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -3501,6 +3513,55 @@ body {
   .selected-date-wrapper {
     margin: 0;
     margin-bottom: 12px;
+  }
+
+  .stisky__wrapper .stisky__content {
+    padding: 15px;
+  }
+
+  .admin-content__head .btn,
+  .admin-content__head .big-title {
+    margin-bottom: 15px;
+  }
+
+  .shedule-body__time {
+    flex-wrap: wrap;
+    padding: 10px;
+    max-height: 45px;
+  }
+
+  .shedule-body__time .patient {
+    flex: 0 0 100%;
+    order: 3;
+  }
+
+  .patient__hidden-info {
+    padding: 15px 0px 15px 0px;
+  }
+
+  .shedule-body__time .patient__name {
+    padding-top: 15px;
+  }
+
+  .date-range__select {
+    flex: 0 0 100%;
+    order: 2;
+  }
+
+  .date-range__wrapper {
+    flex-wrap: wrap;
+  }
+
+  .date-range__wrapper {
+    margin-bottom: 20px;
+  }
+
+  .cancel-btn {
+    margin-top: 20px;
+  }
+
+  .navigation__btn {
+    margin: 0px 10px;
   }
 }
 
