@@ -25,6 +25,7 @@ window.dateRangeDatapicker = new AirDatepicker('#date-range__datapicker', {
         if (datapickerCounter > 0) {
             datepicker.$el.setAttribute('from-date', formattedDate[0]);
             datepicker.$el.setAttribute('to-date', formattedDate[1]);
+            datepicker.$el.parentNode.querySelector('.date-range__select-text').innerHTML = `${formattedDate[0]} - ${formattedDate[1]}`;
             datapickerCounter = 0;
         } else {
             datapickerCounter++;
@@ -46,12 +47,13 @@ checkWindowSize();
 window.addEventListener('resize', checkWindowSize);
 
 // События клика на разные элементы
-document.addEventListener('pointerdown', (e) => {
+document.addEventListener('click', (e) => {
     const target = e.target;
     //Показать скрытую информацию о пациенте
     if (target.closest('.show-details')) {
         const parentElem = target.closest('.shedule-body__time');
-        parentElem.classList.toggle('show');
+        // parentElem.classList.toggle('show');
+        vanilaToggle(parentElem)
     }
     // Открыть модалку с отменой записи пациента
     if (target.closest('[data-cancel-appointment]')) {
@@ -62,3 +64,30 @@ document.addEventListener('pointerdown', (e) => {
         document.querySelector('[data-cancel-appointment-modal]').classList.remove('show');
     }
 });
+
+
+
+// Аналог slidetoggle на чистом js
+function vanilaToggle(toggleContent) {
+    let elemHeight = window.innerWidth < 576 ? "45px" : '56px';
+
+    if (!toggleContent.classList.contains('show')) {
+        toggleContent.classList.add('show');
+        toggleContent.style.height = 'auto';
+
+        let height = toggleContent.clientHeight + 'px';
+        toggleContent.style.height = elemHeight;
+
+        setTimeout(function () {
+            toggleContent.style.height = height;
+        }, 0);
+    } else {
+        toggleContent.style.height = elemHeight;
+        toggleContent.addEventListener('transitionend',
+            function () {
+                toggleContent.classList.remove('show');
+            }, {
+            once: true
+        });
+    }
+}
