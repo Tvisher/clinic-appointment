@@ -1735,12 +1735,12 @@ body {
   padding: 16px 40px 16px 16px;
   max-height: 56px;
   overflow: hidden;
-  transition: max-height 1s cubic-bezier(0, 1, 0, 1),
+  transition: max-height 10s cubic-bezier(0, 1, 0, 1),
     background-color .4s ease-in-out;
 
   &.show {
-    max-height: 600px;
-    transition: max-height 1s ease-in,
+    max-height: 9999px;
+    transition: max-height 5s ease-in,
       background-color .4s ease-in-out;
     background-color: rgba(240, 245, 246, 0.5);
 
