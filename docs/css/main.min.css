@@ -2733,6 +2733,160 @@ body {
   background-color: #2371E4;
 }
 
+.institution-block {
+  margin-bottom: 44px;
+  background-color: rgba(240, 245, 246, 0.5);
+  padding: 30px;
+  border-radius: 4px;
+}
+
+.institution-block .widget-template__warning {
+  margin: initial;
+  margin-bottom: 0;
+  width: fit-content;
+  max-width: initial;
+}
+
+.institution-block__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.institution-block__head .litle-subtitle,
+.institution-block__head .large-title {
+  padding-right: 10px;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 12px;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.status svg {
+  margin-right: 7px;
+}
+
+.status.green {
+  background-color: #C0FFD2;
+}
+
+.institution-block__text {
+  margin-bottom: 13px;
+}
+
+.working-hours__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 3px;
+}
+
+.working-hours__item {
+  height: 64px;
+  overflow: hidden;
+  padding-top: 23px;
+  padding-bottom: 21px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  transition: height 0.8s ease-in-out;
+}
+
+.working-hours__item.show {
+  height: auto;
+}
+
+.working-hours__item.show .widget-template__shedule {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.working-hours__item.show .working-hours__day-ico {
+  transform: rotate(180deg);
+}
+
+.working-hours__item.down .widget-template__shedule {
+  pointer-events: none;
+  transform: translateY(64px);
+  opacity: 0;
+}
+
+.working-hours__item.down .working-hours__day-ico {
+  transform: rotate(0deg);
+}
+
+.working-hours__item:not(l:last-child) {
+  border-bottom: 1px solid #E1EAED;
+}
+
+.working-hours__item .widget-template__shedule {
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+  will-change: transform;
+  transform: translateY(64px);
+  opacity: 0;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0;
+  margin-top: -9px;
+}
+
+.working-hours__item .widget-template__shedule .shedule__block {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex: 0 0 100%;
+}
+
+.working-hours__item .widget-template__shedule .shedule__block-list {
+  width: 100%;
+}
+
+.working-hours__item .widget-template__nameplate {
+  margin-right: 19px;
+  padding-top: 5px;
+  line-height: 143%;
+}
+
+.working-hours__item .shedule__block-list li {
+  flex: 0 0 auto;
+  width: 88px;
+  height: 40px;
+  white-space: nowrap;
+}
+
+.working-hours__item .shedule__block-list li .shedule-time {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.working-hours__item .shedule__block-list {
+  margin-bottom: 8px;
+}
+
+.working-hours__day {
+  min-width: 125px;
+  margin-right: 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.working-hours__day .working-hours__day-ico {
+  transition: transform 0.8s ease-in-out;
+  margin-right: 9px;
+}
+
 @media screen and (max-width: 1480px) {
   html {
     font-size: 16px;

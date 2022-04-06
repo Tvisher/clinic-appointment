@@ -2072,3 +2072,163 @@ body {
     }
   }
 }
+
+
+.institution-block {
+  margin-bottom: 44px;
+  background-color: rgba(240, 245, 246, 0.5);
+  padding: 30px;
+  border-radius: 4px;
+
+  .widget-template__warning {
+    margin: initial;
+    margin-bottom: 0;
+    width: fit-content;
+    max-width: initial;
+  }
+}
+
+.institution-block__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+
+  .litle-subtitle,
+  .large-title {
+    padding-right: 10px;
+  }
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 12px;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 600;
+
+  svg {
+    margin-right: 7px;
+  }
+
+  &.green {
+    background-color: #C0FFD2;
+  }
+}
+
+.institution-block__text {
+  margin-bottom: 13px;
+}
+
+.working-hours__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 3px;
+}
+
+.working-hours__item {
+  height: 64px;
+  overflow: hidden;
+  padding-top: 23px;
+  padding-bottom: 21px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  transition: height .8s ease-in-out;
+
+  &.show {
+    height: auto;
+
+    .widget-template__shedule {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .working-hours__day-ico {
+      transform: rotate(180deg);
+    }
+  }
+
+  &.down {
+    .widget-template__shedule {
+      pointer-events: none;
+      transform: translateY(64px);
+      opacity: 0;
+    }
+
+    .working-hours__day-ico {
+      transform: rotate(0deg);
+    }
+  }
+
+  &:not(l:last-child) {
+    border-bottom: 1px solid #E1EAED;
+  }
+
+  .widget-template__shedule {
+    transition: transform .8s ease-in-out, opacity .8s ease-in-out;
+    will-change: transform;
+    transform: translateY(64px);
+    opacity: 0;
+    flex-direction: column;
+    margin: 0px;
+    padding: 0;
+    margin-top: -9px;
+
+    .shedule__block {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex: 0 0 100%;
+    }
+
+    .shedule__block-list {
+      width: 100%;
+    }
+  }
+
+  .widget-template__nameplate {
+    margin-right: 19px;
+    padding-top: 5px;
+    line-height: 143%;
+  }
+
+  .shedule__block-list li {
+    flex: 0 0 auto;
+    width: 88px;
+    height: 40px;
+    white-space: nowrap;
+
+    .shedule-time {
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .shedule__block-list {
+    margin-bottom: 8px;
+  }
+}
+
+.working-hours__day {
+  min-width: 125px;
+  margin-right: 25px;
+  cursor: pointer;
+  // flex: 0 0 17%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  .working-hours__day-ico {
+    transition: transform .8s ease-in-out;
+    margin-right: 9px;
+  }
+}
+
+.working-hours__day-name {}
