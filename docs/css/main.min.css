@@ -2436,6 +2436,13 @@ button {
   font-family: "Montserrat";
 }
 
+.air-datepicker .air-datepicker-cell.-selected-,
+.air-datepicker-cell.-in-range-,
+.air-datepicker-cell.-range-to-,
+.air-datepicker-cell.-range-from- {
+  border-radius: 50% !important;
+}
+
 .air-datepicker-nav--action {
   transition: background-color 0.35s ease-in-out, border-color 0.35s ease-in-out;
   overflow: hidden;
@@ -3562,6 +3569,19 @@ body {
 
   .navigation__btn {
     margin: 0px 10px;
+  }
+
+  .header__user:after {
+    margin-left: 5px;
+  }
+
+  .header__logo {
+    padding: 15px 0px;
+  }
+
+  .navigation__btn {
+    font-size: 14px;
+    padding: 15px 0;
   }
 }
 

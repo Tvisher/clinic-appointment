@@ -6,7 +6,7 @@ import Swiper, {
 import AirDatepicker from 'air-datepicker';
 import localeEn from 'air-datepicker/locale/en.js';
 
-let datapicerCounter = 0;
+let datapickerCounter = 0;
 window.dateRangeDatapicker = new AirDatepicker('#date-range__datapicker', {
     autoClose: true,
     position: 'bottom right',
@@ -24,15 +24,16 @@ window.dateRangeDatapicker = new AirDatepicker('#date-range__datapicker', {
         }
     ],
     onSelect({ date, formattedDate, datepicker }) {
-        if (datapicerCounter > 0) {
+        if (datapickerCounter > 0) {
             datepicker.$el.setAttribute('from-date', formattedDate[0]);
             datepicker.$el.setAttribute('to-date', formattedDate[1]);
-            datapicerCounter = 0;
+            datapickerCounter = 0;
         } else {
-            datapicerCounter++;
+            datapickerCounter++;
         }
     }
 });
+
 
 
 function checkWindowSize(e) {
@@ -47,10 +48,11 @@ checkWindowSize();
 window.addEventListener('resize', checkWindowSize);
 
 
+
 document.addEventListener('click', (e) => {
     const target = e.target;
     if (target.closest('.show-details')) {
         const parentElem = target.closest('.shedule-body__time');
         parentElem.classList.toggle('show');
     }
-})
+});
