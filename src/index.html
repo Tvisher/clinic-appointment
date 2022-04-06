@@ -100,7 +100,7 @@
                                             <div class="info-type">Phone</div>
                                             <div class="info-data">123-232-4545</div>
                                         </div>
-                                        <div class="cancel-btn">Cancel Appointment</div>
+                                        <div class="cancel-btn" data-cancel-appointment>Cancel Appointment</div>
                                     </div>
                                 </div>
                                 <div class="show-details">
@@ -125,7 +125,7 @@
                                             <div class="info-type">Phone</div>
                                             <div class="info-data">123-232-4545</div>
                                         </div>
-                                        <div class="cancel-btn">Cancel Appointment</div>
+                                        <div class="cancel-btn" data-cancel-appointment>Cancel Appointment</div>
                                     </div>
                                 </div>
                                 <div class="show-details">
@@ -150,7 +150,7 @@
                                             <div class="info-type">Phone</div>
                                             <div class="info-data">123-232-4545</div>
                                         </div>
-                                        <div class="cancel-btn">Cancel Appointment</div>
+                                        <div class="cancel-btn" data-cancel-appointment>Cancel Appointment</div>
                                     </div>
                                 </div>
                                 <div class="show-details">
@@ -178,7 +178,7 @@
                                             <div class="info-type">Phone</div>
                                             <div class="info-data">123-232-4545</div>
                                         </div>
-                                        <div class="cancel-btn">Cancel Appointment</div>
+                                        <div class="cancel-btn" data-cancel-appointment>Cancel Appointment</div>
                                     </div>
                                 </div>
                                 <div class="show-details">
@@ -203,7 +203,7 @@
                                             <div class="info-type">Phone</div>
                                             <div class="info-data">123-232-4545</div>
                                         </div>
-                                        <div class="cancel-btn">Cancel Appointment</div>
+                                        <div class="cancel-btn" data-cancel-appointment>Cancel Appointment</div>
                                     </div>
                                 </div>
                                 <div class="show-details">
@@ -228,7 +228,7 @@
                                             <div class="info-type">Phone</div>
                                             <div class="info-data">123-232-4545</div>
                                         </div>
-                                        <div class="cancel-btn">Cancel Appointment</div>
+                                        <div class="cancel-btn" data-cancel-appointment>Cancel Appointment</div>
                                     </div>
                                 </div>
                                 <div class="show-details">
@@ -256,7 +256,7 @@
                                             <div class="info-type">Phone</div>
                                             <div class="info-data">123-232-4545</div>
                                         </div>
-                                        <div class="cancel-btn">Cancel Appointment</div>
+                                        <div class="cancel-btn" data-cancel-appointment>Cancel Appointment</div>
                                     </div>
                                 </div>
                                 <div class="show-details">
@@ -281,7 +281,7 @@
                                             <div class="info-type">Phone</div>
                                             <div class="info-data">123-232-4545</div>
                                         </div>
-                                        <div class="cancel-btn">Cancel Appointment</div>
+                                        <div class="cancel-btn" data-cancel-appointment>Cancel Appointment</div>
                                     </div>
                                 </div>
                                 <div class="show-details">
@@ -306,7 +306,7 @@
                                             <div class="info-type">Phone</div>
                                             <div class="info-data">123-232-4545</div>
                                         </div>
-                                        <div class="cancel-btn">Cancel Appointment</div>
+                                        <div class="cancel-btn" data-cancel-appointment>Cancel Appointment</div>
                                     </div>
                                 </div>
                                 <div class="show-details">
@@ -325,6 +325,29 @@
         </section>
     </main>
     <footer class="footer"></footer>
+    <div class="modal__wrapper" data-cancel-appointment-modal>
+        <div class="appointment-cancel-modal">
+            <div class="close-modal" data-close-modal>
+            </div>
+            <div class="appointment-cancel-modal__content">
+                <div class="appointment-cancel-modal__title">
+                    <div class="ico-wrapper warn">!</div>
+                    <h4 class="litle-title">Do you need to cancel appointment?</h4>
+                </div>
+                <div class="appointment-cancel-modal__user">
+                    <span class="user-block">Monday - May 9, 2019 &nbsp; 7:00am</span>
+                    <span class="user-block">Olga Volta</span>
+                </div>
+                <form class="">
+                    <textarea name="user-message" class="appointment-cancel-modal__textarea">Due to the weather, we will be closed today. Please continue to check our website for updates.</textarea>
+                    <div class="appointment-cancel-modal__footer">
+                        <button class="btn blueBtn">Cancel Appointment</button>
+                        <div class="cancel__btn btn">No</div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <script src="./js/app.min.js"></script>
 </body>
 

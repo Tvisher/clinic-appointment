@@ -2759,6 +2759,7 @@ button {
   width: 34px;
   height: 34px;
   border-radius: 50%;
+  flex-shrink: 0;
 }
 
 .ico-wrapper.true {
@@ -3309,6 +3310,132 @@ body {
   margin-bottom: 44px;
 }
 
+.modal__wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+  overflow: auto;
+}
+
+.modal__wrapper.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.appointment-cancel-modal {
+  position: relative;
+  max-width: 600px;
+  width: 100%;
+  padding: 30px 35px 53px;
+  background-color: #fff;
+  border-radius: 5px;
+  margin: auto;
+  margin-top: 150px;
+}
+
+.appointment-cancel-modal__title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 32px;
+  padding-right: 30px;
+}
+
+.appointment-cancel-modal__title .ico-wrapper {
+  margin-right: 16px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.appointment-cancel-modal__title .litle-title {
+  margin-bottom: 0;
+}
+
+.appointment-cancel-modal__user {
+  background: #C8F5FF;
+  border-radius: 5px;
+  padding: 9px 20px;
+  margin-bottom: 15px;
+}
+
+.appointment-cancel-modal__user .user-block {
+  margin-bottom: 8px;
+  color: #1F2B3D;
+}
+
+.appointment-cancel-modal__textarea {
+  border: 1px solid #BEC4CF;
+  border-radius: 5px;
+  width: 100%;
+  resize: vertical;
+  min-height: 106px;
+  padding: 14px 21px;
+  margin-bottom: 40px;
+}
+
+.appointment-cancel-modal__footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.cancel__btn {
+  border: 1px solid #BEC4CF;
+  padding: 14px 43px;
+  margin-left: 24px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2371E4;
+}
+
+.close-modal {
+  cursor: pointer;
+  width: 22px;
+  height: 22px;
+  padding: 4px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  transition: transform 0.3s ease-in-out;
+  will-change: transform;
+}
+
+.close-modal:before,
+.close-modal:after {
+  width: 100%;
+  height: 2px;
+  background-color: #BEC4CF;
+  border-radius: 2px;
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 0%;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.close-modal:before {
+  transform: rotate(-45deg);
+}
+
+.close-modal::after {
+  transform: rotate(45deg);
+}
+
+.close-modal:hover {
+  transform: scale(1.2);
+}
+
+.close-modal:hover:before,
+.close-modal:hover:after {
+  background-color: #2371E4;
+}
+
 @media screen and (max-width: 1480px) {
   html {
     font-size: 16px;
@@ -3595,6 +3722,10 @@ body {
     font-size: 14px;
     padding: 15px 0;
   }
+
+  .appointment-cancel-modal {
+    padding: 15px;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -3619,6 +3750,19 @@ body {
 
   .header__user:after {
     display: none;
+  }
+
+  .appointment-cancel-modal__footer {
+    flex-direction: column;
+  }
+
+  .cancel__btn {
+    margin-left: 0;
+    margin-top: 15px;
+  }
+
+  .appointment-cancel-modal__textarea {
+    margin-bottom: 15px;
   }
 }
 

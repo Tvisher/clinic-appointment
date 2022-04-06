@@ -45,12 +45,20 @@ function checkWindowSize(e) {
 checkWindowSize();
 window.addEventListener('resize', checkWindowSize);
 
-
-// принцип раскрытия деталей записи пациента
-document.addEventListener('click', (e) => {
+// События клика на разные элементы
+document.addEventListener('pointerdown', (e) => {
     const target = e.target;
+    //Показать скрытую информацию о пациенте
     if (target.closest('.show-details')) {
         const parentElem = target.closest('.shedule-body__time');
         parentElem.classList.toggle('show');
+    }
+    // Открыть модалку с отменой записи пациента
+    if (target.closest('[data-cancel-appointment]')) {
+        document.querySelector('[data-cancel-appointment-modal]').classList.add('show');
+    }
+    //Закрыть модалку при нажатии на кнопку "no", крестик или фон модалки
+    if (target.closest('.cancel__btn') || target.closest('[data-close-modal]') || (target.closest('.modal__wrapper.show') && !target.closest('.appointment-cancel-modal'))) {
+        document.querySelector('[data-cancel-appointment-modal]').classList.remove('show');
     }
 });
