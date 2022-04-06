@@ -1,11 +1,9 @@
 'use strict';
-import Swiper, {
-    Navigation,
-    Manipulation
-} from 'swiper';
+
 import AirDatepicker from 'air-datepicker';
 import localeEn from 'air-datepicker/locale/en.js';
 
+// Счётчик календаря для корректного выбора диапазона дат.
 let datapickerCounter = 0;
 window.dateRangeDatapicker = new AirDatepicker('#date-range__datapicker', {
     autoClose: true,
@@ -35,7 +33,7 @@ window.dateRangeDatapicker = new AirDatepicker('#date-range__datapicker', {
 });
 
 
-
+// Включение и выключение зажима модального окна в календаре
 function checkWindowSize(e) {
     const windowInnerWidth = window.innerWidth;
     if (windowInnerWidth <= 576) {
@@ -48,7 +46,7 @@ checkWindowSize();
 window.addEventListener('resize', checkWindowSize);
 
 
-
+// принцип раскрытия деталей записи пациента
 document.addEventListener('click', (e) => {
     const target = e.target;
     if (target.closest('.show-details')) {
