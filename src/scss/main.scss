@@ -1739,8 +1739,8 @@ body {
     background-color .4s ease-in-out;
 
   &.show {
-    max-height: 999px;
-    transition: max-height 2s ease-in-out,
+    max-height: 600px;
+    transition: max-height 1s ease-in,
       background-color .4s ease-in-out;
     background-color: rgba(240, 245, 246, 0.5);
 
