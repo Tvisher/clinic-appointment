@@ -2933,6 +2933,9 @@ button {
 .header__logo {
   padding: 22px 30px;
   overflow: hidden;
+  max-width: 130px;
+  max-height: 63px;
+  height: 100%;
 }
 
 .header__logo svg,
@@ -3023,7 +3026,8 @@ header {
 .header__user .user__menu a {
   color: #4C5563;
   font-size: 16px;
-  margin-bottom: 10px;
+  padding: 5px 0;
+  margin-bottom: 3px;
   font-weight: 500;
   transition: color 0.3s ease;
 }
@@ -3522,6 +3526,14 @@ body {
     margin-bottom: 12px;
   }
 
+  .header__user .user__menu {
+    right: 0;
+  }
+
+  .header__user {
+    margin-left: 5px;
+  }
+
   .stisky__wrapper .stisky__content {
     padding: 15px;
   }
@@ -3592,6 +3604,21 @@ body {
 
   .container {
     max-width: 100%;
+  }
+}
+
+@media (max-width: 440px) {
+  header {
+    margin-bottom: 20px;
+  }
+
+  .header__user .user__image {
+    width: 25px;
+    height: 25px;
+  }
+
+  .header__user:after {
+    display: none;
   }
 }
 
