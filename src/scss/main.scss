@@ -1625,12 +1625,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    margin-right: 25px;
+
+    &:not(:last-child) {
+      margin-right: 25px;
+
+    }
 
     &.active {
       .list-item__name {
         color: $brand-black;
-        // border-bottom: 3px solid $brand-blue;
         position: relative;
 
         &:before {

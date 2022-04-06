@@ -2411,6 +2411,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+}
+
+.date-range__date-list .list-item:not(:last-child) {
   margin-right: 25px;
 }
 
