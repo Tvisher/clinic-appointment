@@ -2799,7 +2799,7 @@ body {
   height: 64px;
   overflow: hidden;
   padding-top: 23px;
-  padding-bottom: 21px;
+  padding-bottom: 23px;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -3098,6 +3098,21 @@ body {
     padding: 8px 0px;
   }
 
+  .working-hours__item {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .working-hours__day {
+    padding-top: 23px;
+    padding-bottom: 23px;
+    width: 100%;
+  }
+
+  .working-hours__item .widget-template__shedule {
+    margin-top: 0;
+  }
+
   .unworking-time__head {
     margin-bottom: 15px;
   }
@@ -3307,14 +3322,6 @@ body {
 @media (max-width: 440px) {
   header {
     margin-bottom: 20px;
-  }
-
-  .working-hours__day {
-    width: 100%;
-  }
-
-  .working-hours__item.show .widget-template__shedule {
-    margin-top: 10px;
   }
 
   .header__user .user__image {
