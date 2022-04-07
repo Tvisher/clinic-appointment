@@ -1035,6 +1035,14 @@ li {
 }
 
 @media (max-width: 576px) {
+  .unworking-time__item {
+    padding: 8px 0px;
+  }
+
+  .unworking-time__head {
+    margin-bottom: 15px;
+  }
+
   .widget-template__form {
     margin-top: 70px;
   }
@@ -2193,6 +2201,7 @@ body {
     .widget-template__shedule {
       transform: translateY(0);
       opacity: 1;
+      pointer-events: none;
     }
 
     .working-hours__day-ico {
@@ -2284,6 +2293,10 @@ body {
   align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 32px;
+
+  .title-18 {
+    margin-right: 10px;
+  }
 }
 
 .working-hours__list {
@@ -2323,4 +2336,20 @@ body {
   padding: 3px;
   font-weight: 600;
   color: $brand-blue;
+}
+
+@media (max-width: 992px) {
+  .unworking-time__item {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .unworking-time__col {
+      margin-bottom: 5px;
+
+      &.name {
+        font-weight: 600;
+        font-size: 16px;
+      }
+    }
+  }
 }

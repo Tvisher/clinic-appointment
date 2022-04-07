@@ -2813,6 +2813,7 @@ body {
 .working-hours__item.show .widget-template__shedule {
   transform: translateY(0);
   opacity: 1;
+  pointer-events: none;
 }
 
 .working-hours__item.show .working-hours__day-ico {
@@ -2902,6 +2903,10 @@ body {
   margin-bottom: 32px;
 }
 
+.unworking-time__head .title-18 {
+  margin-right: 10px;
+}
+
 .working-hours__list {
   margin-bottom: 38px;
 }
@@ -2960,6 +2965,22 @@ body {
     z-index: 10;
     overflow: auto;
     transform: translateX(-100%) !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .unworking-time__item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .unworking-time__item .unworking-time__col {
+    margin-bottom: 5px;
+  }
+
+  .unworking-time__item .unworking-time__col.name {
+    font-weight: 600;
+    font-size: 16px;
   }
 }
 
@@ -3073,6 +3094,14 @@ body {
 }
 
 @media (max-width: 576px) {
+  .unworking-time__item {
+    padding: 8px 0px;
+  }
+
+  .unworking-time__head {
+    margin-bottom: 15px;
+  }
+
   .widget-template__form {
     margin-top: 70px;
   }
