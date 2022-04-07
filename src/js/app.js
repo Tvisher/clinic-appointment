@@ -60,7 +60,7 @@ document.addEventListener('click', (e) => {
 
     if (target.closest('[data-working-hours-day]')) {
         const parentElem = target.closest('.working-hours__item');
-        vanilaToggle(parentElem, "64px", "64px");
+        vanilaToggle(parentElem, "47px", "64px");
     }
     // Открыть модалку с отменой записи пациента
     if (target.closest('[data-cancel-appointment]')) {

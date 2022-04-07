@@ -3104,9 +3104,12 @@ body {
   }
 
   .working-hours__day {
-    padding-top: 23px;
-    padding-bottom: 23px;
+    padding: 15px 0;
     width: 100%;
+  }
+
+  .working-hours__item {
+    height: 47px;
   }
 
   .working-hours__item .widget-template__shedule {
