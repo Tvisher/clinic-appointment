@@ -262,7 +262,10 @@
                     </div>
                     <div class="unworking-time">
                         <div class="unworking-time__head">
-                            <h3 class="title-18">Holidays and Special Hours</h3>
+                            <div class="tooltip-wrapper">
+                                <h3 class="title-18">Holidays and Special Hours</h3>
+                                <div class="tooltip-el" data-tippy-content="Holidays and Special Hours">!</div>
+                            </div>
                             <button type="button" class="blue-btn">Edit</button>
                         </div>
                         <ul class="unworking-time__list">
@@ -300,6 +303,10 @@
     <footer class="footer"></footer>
 
     <script src="./js/app.min.js"></script>
+    <script>
+        //функция для обьявления тултипов
+        window.tippy('[data-tippy-content]');
+    </script>
 </body>
 
 

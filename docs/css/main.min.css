@@ -1045,6 +1045,95 @@ th {
   transition: opacity var(--adp-overlay-transition-duration) var(--adp-overlay-transition-ease), height 0s, width 0s;
 }
 
+.tippy-box[data-animation=fade][data-state=hidden] {
+  opacity: 0;
+}
+
+[data-tippy-root] {
+  max-width: calc(100vw - 10px);
+}
+
+.tippy-box {
+  position: relative;
+  background-color: #333;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1.4;
+  white-space: normal;
+  outline: 0;
+  transition-property: transform, visibility, opacity;
+}
+
+.tippy-box[data-placement^=top] > .tippy-arrow {
+  bottom: 0;
+}
+
+.tippy-box[data-placement^=top] > .tippy-arrow:before {
+  bottom: -7px;
+  left: 0;
+  border-width: 8px 8px 0;
+  border-top-color: initial;
+  transform-origin: center top;
+}
+
+.tippy-box[data-placement^=bottom] > .tippy-arrow {
+  top: 0;
+}
+
+.tippy-box[data-placement^=bottom] > .tippy-arrow:before {
+  top: -7px;
+  left: 0;
+  border-width: 0 8px 8px;
+  border-bottom-color: initial;
+  transform-origin: center bottom;
+}
+
+.tippy-box[data-placement^=left] > .tippy-arrow {
+  right: 0;
+}
+
+.tippy-box[data-placement^=left] > .tippy-arrow:before {
+  border-width: 8px 0 8px 8px;
+  border-left-color: initial;
+  right: -7px;
+  transform-origin: center left;
+}
+
+.tippy-box[data-placement^=right] > .tippy-arrow {
+  left: 0;
+}
+
+.tippy-box[data-placement^=right] > .tippy-arrow:before {
+  left: -7px;
+  border-width: 8px 8px 8px 0;
+  border-right-color: initial;
+  transform-origin: center right;
+}
+
+.tippy-box[data-inertia][data-state=visible] {
+  transition-timing-function: cubic-bezier(0.54, 1.5, 0.38, 1.11);
+}
+
+.tippy-arrow {
+  width: 16px;
+  height: 16px;
+  color: #333;
+}
+
+.tippy-arrow:before {
+  content: "";
+  position: absolute;
+  border-color: transparent;
+  border-style: solid;
+}
+
+.tippy-content {
+  position: relative;
+  padding: 5px 9px;
+  z-index: 1;
+}
+
 .unselectable {
   -webkit-touch-callout: none;
   /* iOS Safari */
@@ -2905,6 +2994,7 @@ body {
 
 .unworking-time__head .title-18 {
   margin-right: 10px;
+  margin-bottom: 0;
 }
 
 .working-hours__list {
@@ -2944,6 +3034,48 @@ body {
   padding: 3px;
   font-weight: 600;
   color: #2371E4;
+}
+
+.tooltip-el {
+  cursor: help;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #BEC4CF;
+  color: #BEC4CF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  flex-shrink: 0;
+  transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.tooltip-el:hover {
+  color: #2371E4;
+  border-color: #2371E4;
+}
+
+.tooltip-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 8px;
+  margin-right: 8px;
+}
+
+.tippy-box {
+  background: #1F2B3D;
+  border-radius: 5px;
+}
+
+.tippy-content {
+  padding: 11px;
+  font-size: 14px;
+}
+
+.tippy-arrow {
+  color: #1F2B3D;
 }
 
 @media screen and (max-width: 1480px) {

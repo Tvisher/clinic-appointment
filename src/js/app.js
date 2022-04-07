@@ -3,6 +3,10 @@
 import AirDatepicker from 'air-datepicker';
 import localeEn from 'air-datepicker/locale/en.js';
 
+//глобальное обьявление тултипов
+import tippy from 'tippy.js';
+window.tippy = tippy;
+
 // Счётчик календаря для корректного выбора диапазона дат.
 let datapickerCounter = 0;
 const dateRangeDatapicker = document.querySelector('#date-range__datapicker');
@@ -100,3 +104,5 @@ function vanilaToggle(toggleContent, minMobSize, minPcSize) {
         });
     }
 }
+
+

@@ -2308,6 +2308,7 @@ body {
 
   .title-18 {
     margin-right: 10px;
+    margin-bottom: 0;
   }
 }
 
@@ -2364,4 +2365,46 @@ body {
       }
     }
   }
+}
+
+.tooltip-el {
+  cursor: help;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #BEC4CF;
+  color: #BEC4CF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  flex-shrink: 0;
+  transition: color .3s ease-in-out, border-color .3s ease-in-out;
+
+  &:hover {
+    color: $brand-blue;
+    border-color: $brand-blue;
+  }
+}
+
+.tooltip-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 8px;
+  margin-right: 8px;
+}
+
+.tippy-box {
+  background: #1F2B3D;
+  border-radius: 5px;
+}
+
+.tippy-content {
+  padding: 11px;
+  font-size: 14px;
+}
+
+.tippy-arrow {
+  color: #1F2B3D;
 }
