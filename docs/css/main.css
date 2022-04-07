@@ -1670,6 +1670,7 @@ button {
 }
 
 .widget-template__shedule .shedule__block-list .shedule-time {
+  color: #4C5563;
   width: 100%;
   height: 100%;
   will-change: transform;
@@ -2751,13 +2752,18 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 30px;
   flex-wrap: wrap;
+  margin-bottom: 0;
 }
 
 .institution-block__head .litle-subtitle,
 .institution-block__head .large-title {
   padding-right: 10px;
+}
+
+.institution-block__head .status,
+.institution-block__head .titles-wrap {
+  margin-bottom: 30px;
 }
 
 .status {
@@ -2876,7 +2882,9 @@ body {
 .working-hours__day {
   min-width: 125px;
   margin-right: 25px;
+  margin-top: -3px;
   cursor: pointer;
+  padding: 3px 0;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -2885,6 +2893,52 @@ body {
 .working-hours__day .working-hours__day-ico {
   transition: transform 0.8s ease-in-out;
   margin-right: 9px;
+}
+
+.unworking-time__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.working-hours__list {
+  margin-bottom: 38px;
+}
+
+.unworking-time__item {
+  padding: 14px 9px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #E1EAED;
+  font-size: 14px;
+}
+
+.unworking-time__item:first-child {
+  border-top: 1px solid #E1EAED;
+}
+
+.unworking-time__item .unworking-time__col {
+  flex: 0 0 33.33%;
+  color: #4C5563;
+  padding: 0px 5px;
+}
+
+.unworking-time__item .unworking-time__col.name {
+  color: #1F2B3D;
+}
+
+.unworking-time__item .unworking-time__col.time {
+  text-align: right;
+  padding-right: 64px;
+}
+
+.blue-btn {
+  margin-right: 10px;
+  padding: 3px;
+  font-weight: 600;
+  color: #2371E4;
 }
 
 @media screen and (max-width: 1480px) {
@@ -2952,6 +3006,33 @@ body {
 }
 
 @media (max-width: 768px) {
+  .working-hours__item.show .widget-template__shedule {
+    overflow: visible;
+  }
+
+  .working-hours__item .widget-template__shedule .shedule__block {
+    min-width: initial;
+  }
+
+  .working-hours__item {
+    flex-direction: column;
+  }
+
+  .working-hours__item .widget-template__shedule {
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+
+  .working-hours__item .widget-template__shedule .shedule__block {
+    flex: 0 0 auto;
+    flex-direction: column;
+  }
+
+  .working-hours__day {
+    margin-right: 0;
+  }
+
   .widget-template__slider {
     max-width: initial;
   }
@@ -3177,6 +3258,11 @@ body {
   .appointment-cancel-modal {
     padding: 15px;
   }
+
+  .institution-block {
+    padding: 15px;
+    margin-bottom: 30px;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -3192,6 +3278,14 @@ body {
 @media (max-width: 440px) {
   header {
     margin-bottom: 20px;
+  }
+
+  .working-hours__day {
+    width: 100%;
+  }
+
+  .working-hours__item.show .widget-template__shedule {
+    margin-top: 10px;
   }
 
   .header__user .user__image {

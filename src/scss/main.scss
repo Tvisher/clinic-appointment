@@ -620,6 +620,7 @@ li {
     font-size: 14px;
 
     .shedule-time {
+      color: $brand-gray;
       width: 100%;
       height: 100%;
       will-change: transform;
@@ -972,6 +973,33 @@ li {
 
 
 @media (max-width: 768px) {
+  .working-hours__item.show .widget-template__shedule {
+    overflow: visible;
+  }
+
+  .working-hours__item .widget-template__shedule .shedule__block {
+    min-width: initial;
+  }
+
+  .working-hours__item {
+    flex-direction: column;
+
+    .widget-template__shedule {
+      flex-direction: column;
+      flex-wrap: wrap;
+      margin-top: 20px;
+
+      .shedule__block {
+        flex: 0 0 auto;
+        flex-direction: column;
+      }
+    }
+  }
+
+  .working-hours__day {
+    margin-right: 0;
+  }
+
   .widget-template__slider {
     max-width: initial;
   }
@@ -1914,11 +1942,25 @@ body {
   .appointment-cancel-modal {
     padding: 15px;
   }
+
+  .institution-block {
+    padding: 15px;
+    margin-bottom: 30px;
+  }
+
 }
 
 @media (max-width: 440px) {
   header {
     margin-bottom: 20px;
+  }
+
+  .working-hours__day {
+    width: 100%;
+  }
+
+  .working-hours__item.show .widget-template__shedule {
+    margin-top: 10px;
   }
 
   .header__user .user__image {
@@ -2092,12 +2134,17 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 30px;
   flex-wrap: wrap;
+  margin-bottom: 0;
 
   .litle-subtitle,
   .large-title {
     padding-right: 10px;
+  }
+
+  .status,
+  .titles-wrap {
+    margin-bottom: 30px;
   }
 }
 
@@ -2219,8 +2266,9 @@ body {
 .working-hours__day {
   min-width: 125px;
   margin-right: 25px;
+  margin-top: -3px;
   cursor: pointer;
-  // flex: 0 0 17%;
+  padding: 3px 0;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -2231,4 +2279,48 @@ body {
   }
 }
 
-.working-hours__day-name {}
+.unworking-time__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.working-hours__list {
+  margin-bottom: 38px;
+}
+
+.unworking-time__item {
+  padding: 14px 9px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #E1EAED;
+  font-size: 14px;
+
+  &:first-child {
+    border-top: 1px solid #E1EAED;
+  }
+
+  .unworking-time__col {
+    flex: 0 0 33.33%;
+    color: $brand-gray;
+    padding: 0px 5px;
+
+    &.name {
+      color: $brand-black;
+    }
+
+    &.time {
+      text-align: right;
+      padding-right: 64px;
+    }
+  }
+}
+
+.blue-btn {
+  margin-right: 10px;
+  padding: 3px;
+  font-weight: 600;
+  color: $brand-blue;
+}
