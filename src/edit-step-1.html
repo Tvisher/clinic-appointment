@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clinic Appointment</title>
     <!-- Preload fonts -->
-    <link rel="preload" href="fonts/Klein-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="fonts/Montserrat-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="fonts/Montserrat-Black.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="fonts/Montserrat-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
@@ -68,6 +67,81 @@
                             </div>
                         </div>
                         <span class="litle-subtitle">Please provide the following information about your appointment.</span>
+                        <div class="edit__settings">
+                            <div class="tooltip-wrapper">
+                                <label class="styles-label">
+                                    <input class="styles-text-input" type="text" name="event-name" data-styles-field>
+                                    <span class="styles-text">Event name</span>
+                                </label>
+                                <div class="tooltip-el" data-tippy-content="Event name">!</div>
+                            </div>
+                            <div class="tooltip-wrapper">
+                                <label class="styles-label">
+                                    <input class="styles-text-input" type="text" name="clinic-name" data-styles-field>
+                                    <span class="styles-text">Clinic Name</span>
+                                </label>
+                                <div class="tooltip-el" data-tippy-content="Clinic Name">!</div>
+                            </div>
+                            <div class="tooltip-wrapper">
+                                <label class="styles-label">
+                                    <input class="styles-text-input" type="text" name="street-address" data-styles-field>
+                                    <span class="styles-text">Street Address</span>
+                                </label>
+                                <div class="tooltip-el" data-tippy-content="Street Address">!</div>
+                            </div>
+                            <div class="tooltip-wrapper">
+                                <label class="styles-label">
+                                    <input class="styles-text-input" type="text" name="city-name" data-styles-field>
+                                    <span class="styles-text">City</span>
+                                </label>
+                            </div>
+                            <div class="tooltip-wrapper">
+                                <label class="styles-label">
+                                    <textarea class="styles-textarea" name="event-details" data-styles-field></textarea>
+                                    <span class="styles-text">Description (event details and disclaimers)</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="duration-block">
+                            <div class="tooltip-wrapper">
+                                <h4 class="duration-title">Event Duration</h4>
+                                <div class="tooltip-el" data-tippy-content="Event Duration">!</div>
+                            </div>
+                            <div class="duration-block__wrapper">
+                                <label class="duration-block__label">
+                                    <input type="radio" name="duration" value="15" class="duration-block__input" checked>
+                                    <span class="duration-block__time">15</span>
+                                </label>
+                                <label class="duration-block__label">
+                                    <input type="radio" name="duration" value="30" class="duration-block__input">
+                                    <span class="duration-block__time">30</span>
+                                </label>
+                                <label class="duration-block__label">
+                                    <input type="radio" name="duration" value="45" class="duration-block__input">
+                                    <span class="duration-block__time">45</span>
+                                </label>
+                                <label class="duration-block__label">
+                                    <input type="radio" name="duration" value="60" class="duration-block__input">
+                                    <span class="duration-block__time">60</span>
+                                </label>
+                            </div>
+                            <div class="tooltip-wrapper duration-block__field">
+                                <label class="styles-label">
+                                    <input class="styles-text-input" type="number" min="1" max="30" name="duration-event" data-styles-field>
+                                    <span class="styles-text">Events can be scheduled over</span>
+                                </label>
+                                <div class="flex-row">
+                                    <span>Rolling days</span>
+                                    <div class="tooltip-el" data-tippy-content="Events can be scheduled over">!</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget-template__footer">
+                            <button type="button" class="back-btn">Back</button>
+                            <div class="next-step" data-show-next-step>
+                                <button type="button" class="next-btn btn">Next</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -75,6 +149,10 @@
     </main>
     <footer class="footer"></footer>
     <script src="./js/app.min.js"></script>
+    <script defer>
+        //функция для обьявления тултипов
+        window.tippy('[data-tippy-content]');
+    </script>
 </body>
 
 

@@ -41,7 +41,7 @@ if (dateRangeDatapicker) {
 }
 
 
-// Включение и выключение зажима модального окна в календаре
+// Включение и выключение режима модального окна в календаре
 function checkWindowSize(e) {
     const windowInnerWidth = window.innerWidth;
     if (windowInnerWidth <= 576) {
@@ -106,3 +106,25 @@ function vanilaToggle(toggleContent, minMobSize, minPcSize) {
 }
 
 
+
+
+
+//Анимация инпутов с placeholder выезжающим за пределы поля инпута
+const stylinginputs = document.querySelectorAll('[data-styles-field]');
+stylinginputs.forEach(input => {
+    input.addEventListener('focus', (e) => {
+        const input = e.target;
+        const inputpParent = e.target.parentNode;
+        const transformtext = inputpParent.querySelector('.styles-text');
+        inputpParent.classList.add('focus');
+        transformtext && transformtext.classList.add('fixed');
+
+        input.addEventListener('blur', (e) => {
+            const inputValue = e.target.value.trim();
+            inputpParent.classList.remove('focus');
+            if (inputValue.length === 0) {
+                transformtext.classList.remove('fixed');
+            }
+        }, { once: true });
+    });
+});
