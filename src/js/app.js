@@ -105,26 +105,30 @@ function vanilaToggle(toggleContent, minMobSize, minPcSize) {
     }
 }
 
-
-
-
-
 //Анимация инпутов с placeholder выезжающим за пределы поля инпута
 const stylinginputs = document.querySelectorAll('[data-styles-field]');
-stylinginputs.forEach(input => {
-    input.addEventListener('focus', (e) => {
-        const input = e.target;
-        const inputpParent = e.target.parentNode;
+if (stylinginputs) {
+    stylinginputs.forEach(input => {
+        const inputpParent = input.parentNode;
         const transformtext = inputpParent.querySelector('.styles-text');
-        inputpParent.classList.add('focus');
-        transformtext && transformtext.classList.add('fixed');
+        input.addEventListener('focus', (e) => {
+            inputpParent.classList.add('focus');
+            transformtext && transformtext.classList.add('fixed');
 
-        input.addEventListener('blur', (e) => {
-            const inputValue = e.target.value.trim();
-            inputpParent.classList.remove('focus');
-            if (inputValue.length === 0) {
-                transformtext.classList.remove('fixed');
-            }
-        }, { once: true });
+            input.addEventListener('blur', (e) => {
+                const inputValue = e.target.value.trim();
+                inputpParent.classList.remove('focus');
+                if (inputValue.length === 0) {
+                    transformtext.classList.remove('fixed');
+                }
+            }, { once: true });
+        });
+        //Добавление класса к инпуту если он заполнен
+        const inputValue = input.value.trim();
+        if (inputValue.length === 0) {
+            transformtext.classList.remove('fixed');
+        } else {
+            transformtext.classList.add('fixed');
+        }
     });
-});
+}
