@@ -31,20 +31,26 @@ if (dateRangeDatapicker) {
             if (datapickerCounter > 0) {
                 datepicker.$el.setAttribute('from-date', formattedDate[0]);
                 datepicker.$el.setAttribute('to-date', formattedDate[1]);
-                datepicker.$el.parentNode.querySelector('.date-range__select-text').innerHTML = `${formattedDate[0]} - ${formattedDate[1]}`;
+                const datapickerTextElem = datepicker.$el.parentNode.querySelector('.date-range__select-text');
+                datapickerTextElem.innerHTML = `${formattedDate[0]} - ${formattedDate[1]}`;
+                datapickerTextElem.classList.add('show');
                 datapickerCounter = 0;
             } else {
                 datapickerCounter++;
             }
         }
     });
+
+    document.querySelector('[data-open-calendar]').onclick = (e) => {
+        window.dateRangeDatapicker.show()
+    }
 }
 
 
 // Включение и выключение режима модального окна в календаре
 function checkWindowSize(e) {
     const windowInnerWidth = window.innerWidth;
-    if (windowInnerWidth <= 576) {
+    if (windowInnerWidth <= 992) {
         dateRangeDatapicker && window.dateRangeDatapicker.update({ isMobile: true });
     } else {
         dateRangeDatapicker && window.dateRangeDatapicker.update({ isMobile: false });
@@ -74,6 +80,26 @@ document.addEventListener('click', (e) => {
     if (target.closest('.cancel__btn') || target.closest('[data-close-modal]') || (target.closest('.modal__wrapper.show') && !target.closest('.appointment-cancel-modal'))) {
         document.querySelector('[data-cancel-appointment-modal]').classList.remove('show');
     }
+
+    //Скрываем текстовое поле с диапозоном дат при выборе нужного диапозона
+    if (target.closest('[data-selected-range]')) {
+        let currentTimeRange = target.closest('[data-selected-range]').querySelector('.list-item__name').textContent;
+        let textBlock = document.querySelector('.date-range__select-text')
+        textBlock.innerText = currentTimeRange;
+        textBlock.classList.add('show');
+    }
+    // Скрываем выпадающее меню при нажатии куда либо
+    if (document.querySelector('.date-range__date-list.show')) {
+        document.querySelector('.date-range__date-list').classList.remove('show');
+        document.querySelector('[data-open-range-date]').classList.remove('show');
+        return;
+    }
+    // Открываем выпадающее меню с диапазонами дат при нажатии на бургер
+    if (target.closest('[data-open-range-date]') && !target.closest('[data-open-range-date].show')) {
+        target.closest('[data-open-range-date]').classList.toggle('show');
+        document.querySelector('.date-range__date-list').classList.toggle('show');
+    }
+
 });
 
 

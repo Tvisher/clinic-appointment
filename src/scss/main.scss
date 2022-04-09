@@ -1784,6 +1784,7 @@ body {
   align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 37px;
+  position: relative;
 }
 
 .date-range__select {
@@ -2687,6 +2688,191 @@ body {
   .styles-label {
     max-width: 250px;
     margin-right: 20px;
+    margin-bottom: 0;
+  }
+}
+
+.date-range-open {
+  height: 32px;
+  border-radius: 3px;
+  margin-bottom: 25px;
+  // margin-left: 15px;
+  display: none;
+  align-items: center;
+
+  .burger {
+    flex: 0 0 auto;
+    height: 100%;
+    width: 32px;
+    flex-direction: column;
+    justify-content: space-around;
+    display: flex;
+
+    span {
+      width: 100%;
+      height: 4px;
+      background-color: $brand-blue;
+      border-radius: 5px;
+      transition: transform .3s ease;
+    }
+  }
+
+  &.show {
+    span:nth-of-type(1) {
+      transform: rotate(45deg) translate(9px, 7px);
+    }
+
+    span:nth-of-type(2) {
+      transform: scale(0);
+    }
+
+    span:nth-of-type(3) {
+      transform: rotate(-45deg) translate(7px, -6px);
+    }
+  }
+
+
+
+  @media (max-width: 992px) {
+    display: flex;
+  }
+
+  @media (max-width: 576px) {
+    margin-bottom: 15px;
+  }
+}
+
+.calendar-open {
+  margin-top: -3px;
+  width: 28px;
+  height: 28px;
+  border-radius: 3px;
+  margin-bottom: 25px;
+  margin-left: 15px;
+  margin-right: 15px;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M5 5C4.44772 5 4 5.44772 4 6V20C4 20.5523 4.44772 21 5 21H19C19.5523 21 20 20.5523 20 20V6C20 5.44772 19.5523 5 19 5H5ZM2 6C2 4.34315 3.34315 3 5 3H19C20.6569 3 22 4.34315 22 6V20C22 21.6569 20.6569 23 19 23H5C3.34315 23 2 21.6569 2 20V6Z' fill='%23A6AAB1'/%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M16 1C16.5523 1 17 1.44772 17 2V6C17 6.55228 16.5523 7 16 7C15.4477 7 15 6.55228 15 6V2C15 1.44772 15.4477 1 16 1Z' fill='%23A6AAB1'/%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M8 1C8.55228 1 9 1.44772 9 2V6C9 6.55228 8.55228 7 8 7C7.44772 7 7 6.55228 7 6V2C7 1.44772 7.44772 1 8 1Z' fill='%23A6AAB1'/%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M2 10C2 9.44771 2.44772 9 3 9H21C21.5523 9 22 9.44771 22 10C22 10.5523 21.5523 11 21 11H3C2.44772 11 2 10.5523 2 10Z' fill='%23A6AAB1'/%3e%3c/svg%3e ");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  display: none;
+
+  @media (max-width: 992px) {
+    display: block;
+  }
+
+  @media (max-width: 576px) {
+    margin-bottom: 15px;
+  }
+}
+
+.mobile-date-range-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@media (max-width: 992px) {
+  .date-range__select-text::after {
+    display: none;
+  }
+
+  .date-range__select-text {
+    display: none;
+    justify-content: flex-end;
+    text-align: right;
+
+    &.show {
+      display: block;
+      visibility: visible;
+    }
+  }
+
+  .date-range__datapicker {
+    display: none;
+  }
+
+  .date-range__wrapper {
+    margin-bottom: 0;
+    justify-content: flex-end;
+  }
+
+  .date-range__date-list {
+    z-index: 5;
+    position: absolute;
+    right: 0;
+    top: 0;
+    flex-direction: column;
+    align-items: flex-end;
+    order: 3;
+    background: #fff;
+    padding: 15px;
+    margin: 0;
+    border-radius: 4px;
+    box-shadow: 2px 0px 9px 1px rgb(0 0 0 / 10%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .4s ease, visibility .4s ease;
+
+    &.show {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .date-range__date-list .list-item__counter {
+    order: -1;
+    margin-right: 5px;
+  }
+
+  .date-range__date-list .list-item {
+    margin-right: 0 !important;
+  }
+}
+
+
+.entry__counter {
+  margin-right: 5px;
+  background: #C8F5FF;
+  border-radius: 56px;
+  padding: 1px 5px;
+  font-size: 14px;
+  line-height: 143%;
+  color: $brand-black;
+  font-weight: 500;
+
+  &:empty {
+    display: none;
+  }
+}
+
+@media (max-width: 650px) {
+  .mobile-date-range-wrap {
+    flex: 0 0 100%;
+
+    .blueBtn {
+      padding: 9px 10px;
+    }
+  }
+
+  .date-range-open {
+    margin-left: 10px;
+  }
+
+  .calendar-open {
+    margin-right: 5px;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .mobile-date-range-wrap .blueBtn,
+  .calendar-open,
+  .date-range-open {
+    margin-bottom: 10px;
+  }
+
+  .date-range__wrapper {
     margin-bottom: 0;
   }
 }

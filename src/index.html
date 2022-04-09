@@ -52,27 +52,38 @@
                 <div class="stisky__content admin-content">
                     <div class="admin-content__head">
                         <h2 class="big-title">Appointment</h2>
-                        <button class="btn blueBtn">Create New Appointment</button>
+                        <div class="mobile-date-range-wrap">
+                            <button class="btn blueBtn">Add Appointment</button>
+                            <button class="calendar-open" data-open-calendar></button>
+                            <button class="date-range-open" data-open-range-date>
+                                <div class="entry__counter">99+</div>
+                                <div class="burger">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </button>
+                        </div>
                     </div>
                     <div class="date-range__wrapper">
                         <ul class="date-range__date-list">
-                            <li class="list-item">
+                            <li class="list-item" data-selected-range>
                                 <span class="list-item__name">All Past</span>
                                 <span class="list-item__counter"></span>
                             </li>
-                            <li class="list-item active">
+                            <li class="list-item active" data-selected-range>
                                 <span class="list-item__name">This week</span>
                                 <span class="list-item__counter">13</span>
                             </li>
-                            <li class="list-item">
+                            <li class="list-item" data-selected-range>
                                 <span class="list-item__name">Today</span>
                                 <span class="list-item__counter">4</span>
                             </li>
-                            <li class="list-item">
+                            <li class="list-item" data-selected-range>
                                 <span class="list-item__name">This month</span>
                                 <span class="list-item__counter">24</span>
                             </li>
-                            <li class="list-item">
+                            <li class="list-item" data-selected-range>
                                 <span class="list-item__name">All Upcoming</span>
                                 <span class="list-item__counter">136</span>
                             </li>
