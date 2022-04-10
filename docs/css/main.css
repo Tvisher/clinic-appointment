@@ -2223,6 +2223,24 @@ button {
   margin-bottom: 5px;
 }
 
+.form-checkbox {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.form-checkbox:checked + .checkbox-name::before {
+  background: #2371E4;
+  border-color: #2371E4;
+}
+
+.form-checkbox:checked + .checkbox-name::after {
+  opacity: 1;
+}
+
 .widget-template__label {
   cursor: pointer;
   position: relative;
@@ -2238,30 +2256,12 @@ button {
   padding: 14px 20px;
 }
 
-.widget-template__label .form-checkbox {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-}
-
-.widget-template__label .form-checkbox:checked + .checkbox-name::before {
-  background: #2371E4;
-  border-color: #2371E4;
-}
-
-.widget-template__label .form-checkbox:checked + .checkbox-name::after {
-  opacity: 1;
-}
-
-.widget-template__label .checkbox-name {
+.checkbox-name {
   padding-left: 30px;
   position: relative;
 }
 
-.widget-template__label .checkbox-name::after {
+.checkbox-name::after {
   position: absolute;
   content: "";
   left: 3px;
@@ -2277,7 +2277,7 @@ button {
   transition: opacity 0.3s ease;
 }
 
-.widget-template__label .checkbox-name::before {
+.checkbox-name::before {
   transition: background-color 0.3s ease, border-color 0.3s ease;
   position: absolute;
   content: "";
@@ -2290,7 +2290,7 @@ button {
   border: 1px solid #E1EAED;
 }
 
-.widget-template__label .form-radio {
+.form-radio {
   position: absolute;
   left: 0;
   top: 0;
@@ -2299,17 +2299,17 @@ button {
   opacity: 0;
 }
 
-.widget-template__label .form-radio:checked + .radio-name::before {
+.form-radio:checked + .radio-name::before {
   border-color: #2371E4;
   border-width: 5px;
 }
 
-.widget-template__label .radio-name {
+.radio-name {
   padding-left: 30px;
   position: relative;
 }
 
-.widget-template__label .radio-name::before {
+.radio-name::before {
   transition: border-color 0.3s ease, border-width 0.15s linear;
   position: absolute;
   content: "";
@@ -2919,6 +2919,9 @@ body {
 .working-hours__item.show .widget-template__shedule {
   transform: translateY(0);
   opacity: 1;
+}
+
+.working-hours__item.show .widget-template__shedule.result {
   pointer-events: none;
 }
 
@@ -2926,10 +2929,15 @@ body {
   transform: rotate(180deg);
 }
 
+.working-hours__item.down {
+  pointer-events: none;
+}
+
 .working-hours__item.down .widget-template__shedule {
   pointer-events: none;
   transform: translateY(64px);
   opacity: 0;
+  overflow: hidden;
 }
 
 .working-hours__item.down .working-hours__day-ico {
@@ -2945,6 +2953,7 @@ body {
   will-change: transform;
   transform: translateY(64px);
   opacity: 0;
+  overflow: initial;
   flex-direction: column;
   margin: 0px;
   padding: 0;
@@ -3004,9 +3013,13 @@ body {
 
 .unworking-time__head {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   margin-bottom: 24px;
+}
+
+.unworking-time__head .tooltip-wrapper {
+  margin-bottom: 0;
 }
 
 .unworking-time__head .title-18 {
@@ -3042,8 +3055,34 @@ body {
 }
 
 .unworking-time__item .unworking-time__col.time {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   text-align: right;
-  padding-right: 64px;
+}
+
+.unworking-time__item .unworking-time__col .widget-template__label {
+  padding: 0;
+}
+
+.unworking-time__item .unworking-time__col .settings {
+  margin-left: 25px;
+  align-items: center;
+  display: flex;
+}
+
+.unworking-time__item .unworking-time__col .settings button {
+  color: #2371E4;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.unworking-time__item .unworking-time__col .settings .close-modal {
+  margin-left: 20px;
+  width: 24px;
+  height: 24px;
+  border: 5px solid transparent;
+  position: static;
 }
 
 .blue-btn {
@@ -3138,8 +3177,8 @@ body {
   font-weight: 600;
 }
 
-.edit__body {
-  padding-top: 30px;
+.edit__head {
+  margin-bottom: 30px;
 }
 
 .edit__body .widget-template__footer {
@@ -3430,6 +3469,18 @@ body {
   z-index: 2;
 }
 
+.edit__content .widget-template__label {
+  margin-bottom: 0 !important;
+}
+
+._working-hours {
+  margin-bottom: 56px;
+}
+
+.relative-wrapper {
+  position: relative;
+}
+
 @media screen and (max-width: 1480px) {
   html {
     font-size: 16px;
@@ -3453,6 +3504,23 @@ body {
 }
 
 @media (max-width: 992px) {
+  .unworking-time__col.time {
+    flex-wrap: wrap;
+    flex: 0 0 auto;
+    width: 100%;
+    justify-content: flex-start !important;
+  }
+
+  .unworking-time__col.time .settings {
+    margin-left: 0;
+    flex: 0 0 100%;
+    width: 100%;
+  }
+
+  .unworking-time__item .unworking-time__col .settings .close-modal {
+    margin-left: auto;
+  }
+
   .unworking-time__item {
     flex-direction: column;
     align-items: flex-start;
@@ -3648,6 +3716,10 @@ body {
   .date-range__date-list .list-item {
     margin-bottom: 10px;
   }
+
+  ._working-hours {
+    margin-bottom: 30px;
+  }
 }
 
 @media (max-width: 650px) {
@@ -3675,8 +3747,8 @@ body {
     margin-bottom: 0;
   }
 
-  .edit__body {
-    padding-top: 20px;
+  .edit__head {
+    margin-bottom: 20px;
   }
 
   .edit__body .litle-subtitle,
@@ -3936,6 +4008,10 @@ body {
 
   .date-range__wrapper {
     margin-bottom: 0;
+  }
+
+  ._working-hours {
+    margin-bottom: 15px;
   }
 }
 

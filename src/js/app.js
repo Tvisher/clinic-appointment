@@ -69,8 +69,12 @@ document.addEventListener('click', (e) => {
     }
 
     if (target.closest('[data-working-hours-day]')) {
+        if (e.target.nodeName === 'INPUT') {
+            e.stopPropagation();
+            return;
+        }
         const parentElem = target.closest('.working-hours__item');
-        vanilaToggle(parentElem, "47px", "64px");
+        vanilaToggle(parentElem, "47px", "64px", e);
     }
     // Открыть модалку с отменой записи пациента
     if (target.closest('[data-cancel-appointment]')) {
@@ -105,10 +109,10 @@ document.addEventListener('click', (e) => {
 
 
 // Аналог slidetoggle на чистом js
-function vanilaToggle(toggleContent, minMobSize, minPcSize) {
+function vanilaToggle(toggleContent, minMobSize, minPcSize, event) {
     let elemHeight = window.innerWidth < 576 ? minMobSize : minPcSize;
 
-    if (!toggleContent.classList.contains('show')) {
+    if (!toggleContent.classList.contains('show') && !toggleContent.classList.contains('down')) {
         toggleContent.classList.add('show');
         toggleContent.style.height = 'auto';
 
