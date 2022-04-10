@@ -135,7 +135,7 @@ li {
 }
 
 *::selection {
-  background: $brand-blue;
+  background: $brand-black;
   color: #fff;
 }
 
@@ -2874,5 +2874,59 @@ body {
 
   .date-range__wrapper {
     margin-bottom: 0;
+  }
+}
+
+.add-logo-block {
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+  .wrapper {
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin: 15px 0;
+    flex-wrap: wrap;
+  }
+
+  .tooltip-el {
+    margin-left: 5px;
+  }
+}
+
+.remove-logo {
+  margin-left: 15px;
+}
+
+.add-logo-block__wrapper {
+  width: 140px;
+  height: 140px;
+  overflow: hidden;
+  border-radius: 3px;
+  margin-right: 15px;
+
+  img,
+  svg {
+    object-fit: contain;
+    height: 100%;
+    object-position: center;
+    margin: auto;
+  }
+}
+
+.upload-btn {
+  position: relative;
+
+  * {
+    cursor: pointer;
+  }
+
+  input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 2;
   }
 }

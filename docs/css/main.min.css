@@ -1244,7 +1244,7 @@ li {
 }
 
 *::selection {
-  background: #2371E4;
+  background: #1F2B3D;
   color: #fff;
 }
 
@@ -3374,6 +3374,60 @@ body {
 
 .entry__counter:empty {
   display: none;
+}
+
+.add-logo-block {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.add-logo-block .wrapper {
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin: 15px 0;
+  flex-wrap: wrap;
+}
+
+.add-logo-block .tooltip-el {
+  margin-left: 5px;
+}
+
+.remove-logo {
+  margin-left: 15px;
+}
+
+.add-logo-block__wrapper {
+  width: 140px;
+  height: 140px;
+  overflow: hidden;
+  border-radius: 3px;
+  margin-right: 15px;
+}
+
+.add-logo-block__wrapper img,
+.add-logo-block__wrapper svg {
+  object-fit: contain;
+  height: 100%;
+  object-position: center;
+  margin: auto;
+}
+
+.upload-btn {
+  position: relative;
+}
+
+.upload-btn * {
+  cursor: pointer;
+}
+
+.upload-btn input[type=file] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 2;
 }
 
 @media screen and (max-width: 1480px) {
