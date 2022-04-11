@@ -132,6 +132,18 @@ document.addEventListener('click', (e) => {
         target.closest('[data-open-range-date]').classList.toggle('show');
         document.querySelector('.date-range__date-list').classList.toggle('show');
     }
+    if (target.closest('[data-switch-pass]')) {
+        target.closest('[data-switch-pass]').classList.toggle('show')
+        const passInput = target.closest('.styles-label.password').querySelector('.styles-text-input');
+        if (passInput.type === 'text') {
+            passInput.type = 'password';
+            return;
+        }
+        if (passInput.type === 'password') {
+            passInput.type = 'text';
+            return;
+        }
+    }
 
 });
 

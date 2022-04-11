@@ -3272,3 +3272,87 @@ body {
     flex: 0 0 100%;
   }
 }
+
+.modal__wrapper.login {
+  opacity: 1;
+  visibility: visible;
+  background: transparent;
+
+  .appointment-cancel-modal {
+    padding: 65px;
+    max-width: 464px;
+    box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.04);
+    border: 1px solid #E1EAED;
+  }
+
+  .login-form {
+    margin-top: 37px;
+  }
+
+  .styles-label {
+    margin-bottom: 16px;
+  }
+
+  .btns-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .forgot {
+    font-size: 14px;
+  }
+
+  .btns-wrap {
+    margin-top: 47px;
+  }
+}
+
+.styles-label.password {
+  padding-right: 45px;
+
+  .show-password {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &.show {
+      path {
+        fill: $brand-blue;
+      }
+    }
+
+    path {
+      transition: fill .3s ease-in-out;
+    }
+
+    &:hover {
+      path {
+        fill: $brand-blue;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .modal__wrapper.login .btns-wrap {
+    align-items: center;
+    flex-direction: column;
+
+    .btn {
+      width: 100%;
+    }
+
+    .forgot {
+      margin-top: 15px;
+    }
+  }
+
+  .modal__wrapper.login .appointment-cancel-modal {
+    padding: 30px;
+  }
+}
