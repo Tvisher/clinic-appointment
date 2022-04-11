@@ -60,13 +60,256 @@
                         </div>
                     </div>
                     <div class="edit__body">
-
+                        <div class="titles-wrap space-between">
+                            <h2 class="large-title">Patient Contact Information Form</h2>
+                            <div class="tooltip-wrapper">
+                                <span class="styles-text">Default form</span>
+                                <div class="tooltip-el" data-tippy-content="Default form">!</div>
+                            </div>
+                        </div>
+                        <span class="litle-subtitle">Create questions that patients need to answer to schedule an appointment.</span>
+                        <div class="form-crater">
+                            <div class="form-crater__wrapper">
+                                <div class="form-crater__head">
+                                    <div class="form-crater__col">
+                                        <div class="tooltip-wrapper">
+                                            <span class="styles-text">Name</span>
+                                            <div class="tooltip-el" data-tippy-content="Name">!</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-crater__col">
+                                        <div class="tooltip-wrapper">
+                                            <span class="styles-text">Required</span>
+                                            <div class="tooltip-el" data-tippy-content="Required">!</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-crater__row">
+                                    <div class="form-crater__col">
+                                        <label class="widget-template__label pointer">
+                                            <div class="relative-wrapper">
+                                                <input class="form-checkbox" checked type="checkbox">
+                                                <span class="checkbox-name">First Name</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="form-crater__col">
+                                        <label class="widget-template__label pointer">
+                                            <div class="relative-wrapper">
+                                                <input class="form-checkbox" checked type="checkbox">
+                                                <span class="checkbox-name">Required</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="form-crater__col">
+                                        <div class="settings">
+                                            <button>Edit</button>
+                                            <button class="close-modal"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-crater__row">
+                                    <div class="form-crater__col">
+                                        <label class="widget-template__label pointer">
+                                            <div class="relative-wrapper">
+                                                <input class="form-checkbox" type="checkbox">
+                                                <span class="checkbox-name">Last Name</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="form-crater__col">
+                                        <label class="widget-template__label pointer">
+                                            <div class="relative-wrapper">
+                                                <input class="form-checkbox" type="checkbox">
+                                                <span class="checkbox-name">Required</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="form-crater__col">
+                                        <div class="settings">
+                                            <button>Edit</button>
+                                            <button class="close-modal"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-crater__row">
+                                    <div class="form-crater__col">
+                                        <label class="widget-template__label pointer">
+                                            <div class="relative-wrapper">
+                                                <input class="form-checkbox" checked type="checkbox">
+                                                <span class="checkbox-name">Email</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="form-crater__col">
+                                        <label class="widget-template__label pointer">
+                                            <div class="relative-wrapper">
+                                                <input class="form-checkbox" checked type="checkbox">
+                                                <span class="checkbox-name">Required</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="form-crater__col">
+                                        <div class="settings">
+                                            <button>Edit</button>
+                                            <button class="close-modal"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-crater__row">
+                                    <div class="form-crater__col">
+                                        <label class="widget-template__label pointer">
+                                            <div class="relative-wrapper">
+                                                <input class="form-checkbox" type="checkbox">
+                                                <span class="checkbox-name">Phone Number</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="form-crater__col">
+                                        <label class="widget-template__label pointer">
+                                            <div class="relative-wrapper">
+                                                <input class="form-checkbox" type="checkbox">
+                                                <span class="checkbox-name">Required</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="form-crater__col">
+                                        <div class="settings">
+                                            <button>Edit</button>
+                                            <button class="close-modal"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="blue-btn form-crater__btn" data-cancel-appointment>Add Question +</button>
+                        <div class="widget-template__footer">
+                            <button type="button" class="back-btn">Back</button>
+                            <div class="next-step">
+                                <button type="button" class="next-btn btn">Next</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
     <footer class="footer"></footer>
+    <div class="modal__wrapper" data-cancel-appointment-modal>
+        <div class="appointment-cancel-modal">
+            <div class="close-modal" data-close-modal>
+            </div>
+            <div class="appointment-cancel-modal__content">
+                <div class="appointment-cancel-modal__title">
+                    <h4 class="litle-title">Add New Date</h4>
+                </div>
+            </div>
+            <div class="event-modal-block">
+                <div class="tooltip-wrapper">
+                    <label class="styles-label">
+                        <input class="styles-text-input" type="text" name="" data-styles-field>
+                        <span class="styles-text">Question</span>
+                    </label>
+                    <div class="tooltip-el" data-tippy-content="Event name">!</div>
+                </div>
+                <div class="radio-select">
+                    <h4 class="radio-select__title">
+                        <div class="tooltip-wrapper">
+                            <span class="styles-text">Type of Field</span>
+                            <div class="tooltip-el" data-tippy-content="Type of Field">!</div>
+                        </div>
+                    </h4>
+                    <div class="field-types">
+                        <label class="relative-wrapper">
+                            <input class="form-radio" checked type="radio" name="some-value">
+                            <span class="radio-name">Number</span>
+                        </label>
+                        <label class="relative-wrapper">
+                            <input class="form-radio" type="radio" name="some-value">
+                            <span class="radio-name">Comments</span>
+                        </label>
+                        <label class="relative-wrapper">
+                            <input class="form-radio" type="radio" name="some-value">
+                            <span class="radio-name">Email</span>
+                        </label>
+                        <label class="relative-wrapper">
+                            <input class="form-radio" checked type="radio" name="some-value">
+                            <span class="radio-name">Text</span>
+                        </label>
+                        <label class="relative-wrapper">
+                            <input class="form-radio" type="radio" name="some-value">
+                            <span class="radio-name">Radio Buttons</span>
+                        </label>
+                        <label class="relative-wrapper">
+                            <input class="form-radio" type="radio" name="some-value">
+                            <span class="radio-name">Checklist</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="answers-block">
+                    <span class="duration-title">Answers</span>
+                    <ul class="answers-block__list">
+                        <li class="list-item">
+                            <button class="list-item__drag"><svg width="10" height="17" viewBox="0 0 10 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 1.5C3 2.32843 2.32843 3 1.5 3C0.671573 3 0 2.32843 0 1.5C0 0.671573 0.671573 0 1.5 0C2.32843 0 3 0.671573 3 1.5Z" fill="#BEC4CF" />
+                                    <path d="M10 1.5C10 2.32843 9.32843 3 8.5 3C7.67157 3 7 2.32843 7 1.5C7 0.671573 7.67157 0 8.5 0C9.32843 0 10 0.671573 10 1.5Z" fill="#BEC4CF" />
+                                    <path d="M10 8.5C10 9.32843 9.32843 10 8.5 10C7.67157 10 7 9.32843 7 8.5C7 7.67157 7.67157 7 8.5 7C9.32843 7 10 7.67157 10 8.5Z" fill="#BEC4CF" />
+                                    <path d="M3 8.5C3 9.32843 2.32843 10 1.5 10C0.671573 10 0 9.32843 0 8.5C0 7.67157 0.671573 7 1.5 7C2.32843 7 3 7.67157 3 8.5Z" fill="#BEC4CF" />
+                                    <path d="M10 15.5C10 16.3284 9.32843 17 8.5 17C7.67157 17 7 16.3284 7 15.5C7 14.6716 7.67157 14 8.5 14C9.32843 14 10 14.6716 10 15.5Z" fill="#BEC4CF" />
+                                    <path d="M3 15.5C3 16.3284 2.32843 17 1.5 17C0.671573 17 0 16.3284 0 15.5C0 14.6716 0.671573 14 1.5 14C2.32843 14 3 14.6716 3 15.5Z" fill="#BEC4CF" />
+                                </svg>
+                            </button>
+                            <label class="relative-wrapper">
+                                <input class="form-radio" type="radio" name="">
+                                <span class="radio-name">New</span>
+                            </label>
+                            <div class="settings">
+                                <div class="close-modal"></div>
+                            </div>
+                        </li>
+                        <li class="list-item">
+                            <button class="list-item__drag"><svg width="10" height="17" viewBox="0 0 10 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 1.5C3 2.32843 2.32843 3 1.5 3C0.671573 3 0 2.32843 0 1.5C0 0.671573 0.671573 0 1.5 0C2.32843 0 3 0.671573 3 1.5Z" fill="#BEC4CF" />
+                                    <path d="M10 1.5C10 2.32843 9.32843 3 8.5 3C7.67157 3 7 2.32843 7 1.5C7 0.671573 7.67157 0 8.5 0C9.32843 0 10 0.671573 10 1.5Z" fill="#BEC4CF" />
+                                    <path d="M10 8.5C10 9.32843 9.32843 10 8.5 10C7.67157 10 7 9.32843 7 8.5C7 7.67157 7.67157 7 8.5 7C9.32843 7 10 7.67157 10 8.5Z" fill="#BEC4CF" />
+                                    <path d="M3 8.5C3 9.32843 2.32843 10 1.5 10C0.671573 10 0 9.32843 0 8.5C0 7.67157 0.671573 7 1.5 7C2.32843 7 3 7.67157 3 8.5Z" fill="#BEC4CF" />
+                                    <path d="M10 15.5C10 16.3284 9.32843 17 8.5 17C7.67157 17 7 16.3284 7 15.5C7 14.6716 7.67157 14 8.5 14C9.32843 14 10 14.6716 10 15.5Z" fill="#BEC4CF" />
+                                    <path d="M3 15.5C3 16.3284 2.32843 17 1.5 17C0.671573 17 0 16.3284 0 15.5C0 14.6716 0.671573 14 1.5 14C2.32843 14 3 14.6716 3 15.5Z" fill="#BEC4CF" />
+                                </svg>
+                            </button>
+                            <label class="relative-wrapper">
+                                <input class="form-radio" type="radio" name="">
+                                <span class="radio-name">Existing</span>
+                            </label>
+                            <div class="settings">
+                                <div class="close-modal"></div>
+                            </div>
+                        </li>
+                        <li class="list-item add-item">
+                            <button class="blue-btn">+ Add more answers</button>
+                        </li>
+                    </ul>
+                    <div class="req-wrap">
+                        <label class="widget-template__label pointer">
+                            <div class="tooltip-wrapper">
+                                <div class="relative-wrapper">
+                                    <input class="form-checkbox" checked type="checkbox">
+                                    <span class="checkbox-name">Required</span>
+                                </div>
+                                <div class="tooltip-el" data-tippy-content="Required tooltip">!</div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div class="widget-template__footer">
+                    <button type="button" class="back-btn">Cancel</button>
+                    <div class="next-step">
+                        <button type="button" class="next-btn btn">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="./js/app.min.js"></script>
     <script defer>
         //функция для обьявления тултипов

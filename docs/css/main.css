@@ -3073,19 +3073,19 @@ body {
   padding: 0;
 }
 
-.unworking-time__item .unworking-time__col .settings {
+.settings {
   margin-left: 25px;
   align-items: center;
   display: flex;
 }
 
-.unworking-time__item .unworking-time__col .settings button {
+.settings button {
   color: #2371E4;
   font-weight: 500;
   font-size: 14px;
 }
 
-.unworking-time__item .unworking-time__col .settings .close-modal {
+.settings .close-modal {
   margin-left: 20px;
   width: 24px;
   height: 24px;
@@ -3199,6 +3199,19 @@ body {
   justify-content: flex-start;
   flex-wrap: wrap;
   margin-bottom: 6px;
+}
+
+.edit__body .titles-wrap.space-between {
+  justify-content: space-between;
+}
+
+.edit__body .titles-wrap.space-between .tooltip-el {
+  margin-left: 5px;
+}
+
+.edit__body .titles-wrap.space-between .tooltip-wrapper {
+  font-size: 14px;
+  color: #4C5563;
 }
 
 .edit__body .large-title {
@@ -3537,6 +3550,14 @@ body {
   color: #4C5563;
 }
 
+.radio-select .radio-select__title .tooltip-el {
+  margin-left: 8px !important;
+}
+
+.radio-select .radio-select__title .tooltip-wrapper {
+  margin-bottom: 0;
+}
+
 .event-modal-block .tooltip-wrapper .tooltip-el {
   margin-left: 15px;
 }
@@ -3570,6 +3591,109 @@ body {
 
 .event-modal-block .widget-template__footer {
   padding: 0;
+}
+
+.form-crater__head,
+.form-crater__row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #E1EAED;
+}
+
+.form-crater__head .tooltip-wrapper,
+.form-crater__row .tooltip-wrapper {
+  margin: 0;
+}
+
+.form-crater__head .widget-template__label,
+.form-crater__row .widget-template__label {
+  padding-left: 0;
+  margin: 0;
+}
+
+.form-crater__head .form-crater__col,
+.form-crater__row .form-crater__col {
+  flex: 0 0 33.33%;
+  display: flex;
+}
+
+.form-crater__head .form-crater__col .settings,
+.form-crater__row .form-crater__col .settings {
+  margin-left: auto;
+}
+
+.form-crater__head {
+  background-color: #F0F5F6;
+  padding: 10px 14px;
+}
+
+.form-crater__head .tooltip-el {
+  margin-left: 5px;
+}
+
+.form-crater__row {
+  padding: 14px;
+}
+
+.form-crater {
+  overflow: auto;
+  padding-bottom: 13px;
+}
+
+.form-crater__btn {
+  margin-top: 10px;
+  margin-bottom: 45px;
+}
+
+.field-types {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.field-types .relative-wrapper {
+  flex: 0 0 33.33%;
+  margin: 0;
+  margin-bottom: 11px;
+  padding: 5px;
+}
+
+.answers-block__list {
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+.answers-block__list .list-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-top: 1px solid #E1EAED;
+  border-bottom: 1px solid #E1EAED;
+  padding: 9px 16px;
+}
+
+.answers-block__list .list-item:not(:last-child) {
+  border-bottom: none;
+}
+
+.answers-block__list .settings {
+  margin-left: auto;
+}
+
+.answers-block__list .list-item__drag {
+  padding: 9px 16px;
+  margin-top: -9px;
+  margin-bottom: -9px;
+  margin-left: -16px;
+}
+
+.answers-block__list .add-item {
+  padding-left: 55px;
+}
+
+.req-wrap {
+  margin-bottom: 87px;
 }
 
 @media screen and (max-width: 1480px) {
@@ -3811,6 +3935,10 @@ body {
   ._working-hours {
     margin-bottom: 30px;
   }
+
+  .form-crater__wrapper {
+    width: 550px;
+  }
 }
 
 @media (max-width: 650px) {
@@ -3833,6 +3961,23 @@ body {
 }
 
 @media (max-width: 576px) {
+  .form-crater__head .form-crater__col,
+  .form-crater__row .form-crater__col {
+    padding-right: 10px;
+  }
+
+  .form-crater__head .form-crater__col:nth-of-type(1),
+  .form-crater__head .form-crater__col:nth-of-type(2),
+  .form-crater__row .form-crater__col:nth-of-type(1),
+  .form-crater__row .form-crater__col:nth-of-type(2) {
+    flex: 0 0 40%;
+  }
+
+  .form-crater__head .form-crater__col:nth-of-type(3),
+  .form-crater__row .form-crater__col:nth-of-type(3) {
+    flex: 0 0 20%;
+  }
+
   .edit__steps {
     margin-top: 20px;
     margin-bottom: 0;
@@ -4108,6 +4253,10 @@ body {
   ._working-hours {
     margin-bottom: 15px;
   }
+
+  .field-types .relative-wrapper {
+    flex: 0 0 50%;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -4150,6 +4299,12 @@ body {
 
   .appointment-cancel-modal__textarea {
     margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 400px) {
+  .field-types .relative-wrapper {
+    flex: 0 0 100%;
   }
 }
 
