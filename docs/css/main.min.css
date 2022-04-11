@@ -3449,6 +3449,7 @@ body {
   overflow: hidden;
   border-radius: 3px;
   margin-right: 15px;
+  background-color: #F0F5F6;
 }
 
 .add-logo-block__wrapper img,
