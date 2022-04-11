@@ -46,9 +46,9 @@ if (dateRangeDatapicker) {
     }
 }
 
-
+// Инициализация календаря в модальном окне
 function modalDatapickerInit(datapickerEl) {
-    window.modalDatapicker = new AirDatepicker(datapickerEl, {
+    const modalDatapicker = new AirDatepicker(datapickerEl, {
         autoClose: true,
         position: 'bottom right',
         locale: localeEn.default,
@@ -72,9 +72,9 @@ function modalDatapickerInit(datapickerEl) {
             dayTextElem.innerText = selectedFullDay;
         }
     });
+    return modalDatapicker
 }
 modalDatapickerInit('#modal-datapicker');
-
 
 // Включение и выключение режима модального окна в календаре
 function checkWindowSize(e) {
@@ -136,7 +136,6 @@ document.addEventListener('click', (e) => {
 });
 
 
-
 // Аналог slidetoggle на чистом js
 function vanilaToggle(toggleContent, minMobSize, minPcSize, event) {
     let elemHeight = window.innerWidth < 576 ? minMobSize : minPcSize;
@@ -165,29 +164,34 @@ function vanilaToggle(toggleContent, minMobSize, minPcSize, event) {
 }
 
 //Анимация инпутов с placeholder выезжающим за пределы поля инпута
-const stylinginputs = document.querySelectorAll('[data-styles-field]');
-if (stylinginputs) {
-    stylinginputs.forEach(input => {
-        const inputpParent = input.parentNode;
-        const transformtext = inputpParent.querySelector('.styles-text');
-        input.addEventListener('focus', (e) => {
-            inputpParent.classList.add('focus');
-            transformtext && transformtext.classList.add('fixed');
+//Вызывать при динамической отрисовке инпутов
+function getAnimationinputs() {
+    const stylinginputs = document.querySelectorAll('[data-styles-field]');
+    if (stylinginputs) {
+        stylinginputs.forEach(input => {
+            const inputpParent = input.parentNode;
+            const transformtext = inputpParent.querySelector('.styles-text');
+            input.addEventListener('focus', (e) => {
+                inputpParent.classList.add('focus');
+                transformtext && transformtext.classList.add('fixed');
 
-            input.addEventListener('blur', (e) => {
-                const inputValue = e.target.value.trim();
-                inputpParent.classList.remove('focus');
-                if (inputValue.length === 0) {
-                    transformtext.classList.remove('fixed');
-                }
-            }, { once: true });
+                input.addEventListener('blur', (e) => {
+                    const inputValue = e.target.value.trim();
+                    inputpParent.classList.remove('focus');
+                    if (inputValue.length === 0) {
+                        transformtext.classList.remove('fixed');
+                    }
+                }, { once: true });
+            });
+            //Добавление класса к инпуту если он заполнен
+            const inputValue = input.value.trim();
+            if (inputValue.length === 0) {
+                transformtext.classList.remove('fixed');
+            } else {
+                transformtext.classList.add('fixed');
+            }
         });
-        //Добавление класса к инпуту если он заполнен
-        const inputValue = input.value.trim();
-        if (inputValue.length === 0) {
-            transformtext.classList.remove('fixed');
-        } else {
-            transformtext.classList.add('fixed');
-        }
-    });
+    }
 }
+window.getAnimationinputs = getAnimationinputs;
+window.getAnimationinputs();
