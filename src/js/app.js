@@ -47,6 +47,35 @@ if (dateRangeDatapicker) {
 }
 
 
+function modalDatapickerInit(datapickerEl) {
+    window.modalDatapicker = new AirDatepicker(datapickerEl, {
+        autoClose: true,
+        position: 'bottom right',
+        locale: localeEn.default,
+        dateFormat: 'MMMM dd, yyyy',
+        isMobile: true,
+        buttons: [
+            {
+                content(dp) {
+                    return 'Today';
+                },
+                onClick(dp) {
+                    dp.selectDate(new Date());
+                }
+            }
+        ],
+        onSelect({ date, formattedDate, datepicker }) {
+            datepicker.$el.parentNode.querySelector('.styles-text').classList.add('fixed');
+            const selectedFullDay = date.toLocaleString('en', { "weekday": "long" });
+            datepicker.$el.closest('.calendar-field').querySelector('.day-wrapper').style.opacity = 1;
+            const dayTextElem = datepicker.$el.closest('.calendar-field').querySelector('.selected-day');
+            dayTextElem.innerText = selectedFullDay;
+        }
+    });
+}
+modalDatapickerInit('#modal-datapicker');
+
+
 // Включение и выключение режима модального окна в календаре
 function checkWindowSize(e) {
     const windowInnerWidth = window.innerWidth;

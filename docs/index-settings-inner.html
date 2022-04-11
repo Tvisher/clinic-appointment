@@ -374,14 +374,14 @@
                                 <h3 class="title-18">Holidays and Special Hours</h3>
                                 <div class="tooltip-el" data-tippy-content="Holidays and Special Hours">!</div>
                             </div>
-                            <button type="button" class="blue-btn">Add+</button>
+                            <button type="button" class="blue-btn" data-cancel-appointment>Add+</button>
                         </div>
                         <ul class="unworking-time__list">
                             <li class="unworking-time__item">
                                 <div class="unworking-time__col name">
                                     <label class="widget-template__label pointer">
                                         <div class="relative-wrapper">
-                                            <input class="form-checkbox" type="checkbox">
+                                            <input class="form-checkbox" type="checkbox" checked>
                                             <span class="checkbox-name">Day before Thanksgiving</span>
                                         </div>
                                     </label>
@@ -474,7 +474,88 @@
         </section>
     </main>
     <footer class="footer"></footer>
-
+    <div class="modal__wrapper" data-cancel-appointment-modal>
+        <div class="appointment-cancel-modal">
+            <div class="close-modal" data-close-modal>
+            </div>
+            <div class="appointment-cancel-modal__content">
+                <div class="appointment-cancel-modal__title">
+                    <h4 class="litle-title">Add New Date</h4>
+                </div>
+            </div>
+            <div class="event-modal-block">
+                <div class="tooltip-wrapper">
+                    <label class="styles-label">
+                        <input class="styles-text-input" type="text" name="" data-styles-field>
+                        <span class="styles-text">Name</span>
+                    </label>
+                    <div class="tooltip-el" data-tippy-content="Event name">!</div>
+                </div>
+                <div class="tooltip-wrapper calendar-field">
+                    <label class="styles-label datapicker-label">
+                        <input class="styles-text-input" type="text" name="" value="" id="modal-datapicker" data-styles-field>
+                        <span class="styles-text">Date</span>
+                    </label>
+                    <div class="day-wrapper">
+                        <span class="selected-day">Thursday</span>
+                        <div class="tooltip-el" data-tippy-content="Event calendar day">!</div>
+                    </div>
+                </div>
+                <div class="radio-select">
+                    <h4 class="radio-select__title">Hours</h4>
+                    <label class="relative-wrapper">
+                        <input class="form-radio" checked type="radio" name="some-value">
+                        <span class="radio-name">Closed</span>
+                    </label>
+                    <label class="relative-wrapper">
+                        <input class="form-radio" type="radio" name="some-value">
+                        <span class="radio-name">Select Hours</span>
+                    </label>
+                </div>
+                <div class="widget-template__shedule">
+                    <div class="shedule__block"><span class="widget-template__nameplate">am</span>
+                        <ul class="shedule__block-list">
+                            <li><input class="shedule-input" type="checkbox" name="shedule-time" value="7:00 am"><span class="shedule-time">7:00 am</span></li>
+                            <li><input class="shedule-input" type="checkbox" name="shedule-time" value="7:15 am"><span class="shedule-time">7:15 am</span></li>
+                            <li><input class="shedule-input" type="checkbox" name="shedule-time" value="7:30 am"><span class="shedule-time">7:30 am</span></li>
+                            <li><input class="shedule-input" type="checkbox" name="shedule-time" value="7:45 am"><span class="shedule-time">7:45 am</span></li>
+                            <li><input class="shedule-input" type="checkbox" name="shedule-time" value="7:00 am"><span class="shedule-time">7:00 am</span></li>
+                            <li><input class="shedule-input" type="checkbox" name="shedule-time" value="7:15 am"><span class="shedule-time">7:15 am</span></li>
+                            <li><input class="shedule-input" type="checkbox" name="shedule-time" value="7:30 am"><span class="shedule-time">7:30 am</span></li>
+                            <li><input class="shedule-input" type="checkbox" name="shedule-time" value="7:45 am"><span class="shedule-time">7:45 am</span></li>
+                            <li><input class="shedule-input" type="checkbox" name="shedule-time" value="7:00 am"><span class="shedule-time">7:00 am</span></li>
+                            <li><input class="shedule-input" type="checkbox" name="shedule-time" value="7:15 am"><span class="shedule-time">7:15 am</span></li>
+                            <li><input class="shedule-input" type="checkbox" name="shedule-time" value="7:30 am"><span class="shedule-time">7:30 am</span></li>
+                            <li><input class="shedule-input" type="checkbox" name="shedule-time" value="7:45 am"><span class="shedule-time">7:45 am</span></li>
+                        </ul>
+                    </div>
+                    <div class="shedule__block"><span class="widget-template__nameplate">pm</span>
+                        <ul class="shedule__block-list">
+                            <li><input class="shedule-input" type="checkbox" name="shedule-time" value="12:00 pm"><span class="shedule-time">12:00 pm</span></li>
+                            <li><input class="shedule-input" type="checkbox" name="shedule-time" value="12:15 pm"><span class="shedule-time">12:15 pm</span></li>
+                            <li><input class="shedule-input" type="checkbox" name="shedule-time" value="12:30 pm"><span class="shedule-time">12:30 pm</span></li>
+                            <li><input class="shedule-input" type="checkbox" name="shedule-time" value="12:45 pm"><span class="shedule-time">12:45 pm</span></li>
+                            <li><input class="shedule-input" type="checkbox" name="shedule-time" value="13:00 pm"><span class="shedule-time">13:00 pm</span></li>
+                            <li><input class="shedule-input" type="checkbox" name="shedule-time" value="13:15 pm"><span class="shedule-time">13:15 pm</span></li>
+                            <li><input class="shedule-input" type="checkbox" name="shedule-time" value="13:30 pm"><span class="shedule-time">13:30 pm</span></li>
+                            <li><input class="shedule-input" type="checkbox" name="shedule-time" value="13:45 pm"><span class="shedule-time">13:45 pm</span></li>
+                            <li><input class="shedule-input" type="checkbox" name="shedule-time" value="14:00 pm"><span class="shedule-time">14:00 pm</span></li>
+                            <li><input class="shedule-input" type="checkbox" name="shedule-time" value="14:15 pm"><span class="shedule-time">14:15 pm</span></li>
+                            <li><input class="shedule-input" type="checkbox" name="shedule-time" value="13:45 pm"><span class="shedule-time">13:45 pm</span></li>
+                            <li><input class="shedule-input" type="checkbox" name="shedule-time" value="14:00 pm"><span class="shedule-time">14:00 pm</span></li>
+                            <li><input class="shedule-input" type="checkbox" name="shedule-time" value="14:15 pm"><span class="shedule-time">14:15 pm</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="widget-template__footer">
+                    <button type="button" class="back-btn">Cancel</button>
+                    <div class="next-step">
+                        <button type="button" class="next-btn btn">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="./js/app.min.js"></script>
     <script defer>
         //функция для обьявления тултипов
