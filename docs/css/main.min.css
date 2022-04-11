@@ -3376,15 +3376,15 @@ body {
 }
 
 .date-range-open.show span:nth-of-type(1) {
-  transform: rotate(45deg) translate(9px, 7px);
+  transform: rotate(45deg) translate(8px, 8px);
 }
 
 .date-range-open.show span:nth-of-type(2) {
-  transform: scale(0);
+  transform: scaleX(0);
 }
 
 .date-range-open.show span:nth-of-type(3) {
-  transform: rotate(-45deg) translate(7px, -6px);
+  transform: rotate(-45deg) translate(7px, -7px);
 }
 
 .calendar-open {
