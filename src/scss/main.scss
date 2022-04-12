@@ -3439,6 +3439,13 @@ body {
 }
 
 @media (max-width: 576px) {
+  .mail-example__item {
+    .appointment-cancel-modal {
+      margin-top: 0;
+      height: 100%;
+    }
+  }
+
   .mail-example .list-item__row {
     flex-wrap: wrap;
   }
