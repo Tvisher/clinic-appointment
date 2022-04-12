@@ -2084,6 +2084,7 @@ body {
 }
 
 .modal__wrapper {
+  z-index: 10;
   position: fixed;
   left: 0;
   top: 0;
@@ -3354,5 +3355,105 @@ body {
 
   .modal__wrapper.login .appointment-cancel-modal {
     padding: 30px;
+  }
+}
+
+.mail-example {
+  .litle-title {
+    margin-bottom: 29px;
+  }
+
+  .tooltip-wrapper {
+    margin-bottom: 20px;
+    align-items: flex-start;
+    margin-right: 0;
+
+    &.area {
+      .tooltip-el {
+        margin-top: 5px;
+      }
+
+      .styles-label {
+        height: 284px;
+      }
+    }
+  }
+
+
+  .tooltip-el {
+    margin-left: 10px;
+    margin-top: 15px;
+    transform: none;
+  }
+
+  .list-item__row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    .list-item__col:nth-of-type(1) {
+      flex: 0 0 60%;
+    }
+
+    .list-item__col:nth-of-type(2) {
+      cursor: pointer;
+      flex: 0 0 40%;
+      padding: 0px 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .blue-btn {
+        margin: auto;
+        margin-top: 24px;
+      }
+    }
+  }
+}
+
+.mail-example__letter {
+  margin: auto;
+  pointer-events: none;
+  max-width: 163px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.mail-example__item {
+  .styles-textarea {
+    height: 100%;
+  }
+
+  padding-bottom: 30px;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #E1EAED;
+  }
+
+  &:not(:first-child) {
+    padding-top: 45px;
+  }
+}
+
+.modal-example {
+  padding: 10px;
+  pointer-events: none;
+}
+
+@media (max-width: 576px) {
+  .mail-example .list-item__row {
+    flex-wrap: wrap;
+  }
+
+  .mail-example .list-item__row .list-item__col:nth-of-type(1) {
+    flex: 0 0 100%;
+  }
+
+  .mail-example .list-item__row .list-item__col:nth-of-type(2) {
+    flex: 0 0 100%;
+  }
+
+  .mail-example__item .close-modal {
+    right: 5px;
+    top: 5px;
   }
 }

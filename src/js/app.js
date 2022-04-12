@@ -111,7 +111,7 @@ document.addEventListener('click', (e) => {
     }
     //Закрыть модалку при нажатии на кнопку "no", крестик или фон модалки
     if (target.closest('.cancel__btn') || target.closest('[data-close-modal]') || (target.closest('.modal__wrapper.show') && !target.closest('.appointment-cancel-modal'))) {
-        document.querySelector('[data-cancel-appointment-modal]').classList.remove('show');
+        document.querySelector('.modal__wrapper.show').classList.remove('show');
     }
 
     //Скрываем текстовое поле с диапозоном дат при выборе нужного диапозона
@@ -132,6 +132,8 @@ document.addEventListener('click', (e) => {
         target.closest('[data-open-range-date]').classList.toggle('show');
         document.querySelector('.date-range__date-list').classList.toggle('show');
     }
+
+    //Подмена типа инпута с паролем в форме авторизации по кнопке на глаз
     if (target.closest('[data-switch-pass]')) {
         target.closest('[data-switch-pass]').classList.toggle('show')
         const passInput = target.closest('.styles-label.password').querySelector('.styles-text-input');
@@ -145,6 +147,11 @@ document.addEventListener('click', (e) => {
         }
     }
 
+    if (target.closest('[data-open-example]')) {
+        const modalId = target.closest('[data-open-example]').dataset.openExample;
+        document.querySelector(`#modal-example-${modalId}`).classList.add('show');
+
+    }
 });
 
 
