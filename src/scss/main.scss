@@ -1631,14 +1631,16 @@ header {
     display: none;
   }
 
+  .header__logo {
+    flex: 0 0 auto;
+  }
+
   .header-wrap {
-    width: auto;
-    margin-left: auto;
+    width: 100%;
 
     .status {
-      // order: 3;
+      margin: auto;
       font-size: 16px;
-
     }
   }
 }
