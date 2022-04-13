@@ -1545,16 +1545,15 @@ li {
 }
 
 .header__logo {
-  padding: 22px 30px;
   overflow: hidden;
-  max-width: 130px;
-  max-height: 63px;
-  height: 100%;
+  width: 95px;
+  height: 63px;
 
   svg,
   img {
     height: 100%;
     object-fit: contain;
+    object-position: center;
   }
 }
 
@@ -1571,8 +1570,23 @@ header {
   margin-bottom: 30px;
 }
 
+.header-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 944px;
+  width: 100%;
+
+  .status {
+    margin-left: 10px;
+  }
+
+  .header__navigation {
+    margin: auto;
+  }
+}
+
 .navigation__btn {
-  // flex: 0 0 50%;
   margin: 0px 25px;
   color: $brand-gray;
   font-size: 16px;
@@ -1585,6 +1599,58 @@ header {
   &.active {
     color: $brand-black;
     border-bottom: 3px solid $brand-blue;
+  }
+
+  .mob-ico {
+    display: none;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+
+    path {
+      fill: $brand-blue;
+    }
+
+    img,
+    svg {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .navigation__btn .mob-ico {
+    display: block;
+  }
+
+  .navigation__btn .mob-hid {
+    display: none;
+  }
+
+  .header-wrap {
+    width: auto;
+    margin-left: auto;
+
+    .status {
+      order: 3;
+      font-size: 16px;
+
+    }
+  }
+}
+
+@media (max-width: 440px) {
+  .header-wrap .status {
+    font-size: 14px;
+    padding: 4px 9px;
+  }
+
+  .navigation__btn .mob-ico {
+    width: 25px;
+    height: 25px;
   }
 }
 

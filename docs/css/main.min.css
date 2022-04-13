@@ -2329,17 +2329,16 @@ button {
 }
 
 .header__logo {
-  padding: 22px 30px;
   overflow: hidden;
-  max-width: 130px;
-  max-height: 63px;
-  height: 100%;
+  width: 95px;
+  height: 63px;
 }
 
 .header__logo svg,
 .header__logo img {
   height: 100%;
   object-fit: contain;
+  object-position: center;
 }
 
 .header__navigation {
@@ -2353,6 +2352,22 @@ header {
   border-bottom: 1px solid #E1EAED;
   background-color: #fff;
   margin-bottom: 30px;
+}
+
+.header-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 944px;
+  width: 100%;
+}
+
+.header-wrap .status {
+  margin-left: 10px;
+}
+
+.header-wrap .header__navigation {
+  margin: auto;
 }
 
 .navigation__btn {
@@ -2369,6 +2384,25 @@ header {
 .navigation__btn.active {
   color: #1F2B3D;
   border-bottom: 3px solid #2371E4;
+}
+
+.navigation__btn .mob-ico {
+  display: none;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+}
+
+.navigation__btn .mob-ico path {
+  fill: #2371E4;
+}
+
+.navigation__btn .mob-ico img,
+.navigation__btn .mob-ico svg {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 
 .header__user {
@@ -4065,6 +4099,24 @@ body {
     min-width: 500px;
   }
 
+  .navigation__btn .mob-ico {
+    display: block;
+  }
+
+  .navigation__btn .mob-hid {
+    display: none;
+  }
+
+  .header-wrap {
+    width: auto;
+    margin-left: auto;
+  }
+
+  .header-wrap .status {
+    order: 3;
+    font-size: 16px;
+  }
+
   .date-range__date-list .list-item {
     margin-bottom: 10px;
   }
@@ -4446,6 +4498,16 @@ body {
 }
 
 @media (max-width: 440px) {
+  .header-wrap .status {
+    font-size: 14px;
+    padding: 4px 9px;
+  }
+
+  .navigation__btn .mob-ico {
+    width: 25px;
+    height: 25px;
+  }
+
   header {
     margin-bottom: 20px;
   }
