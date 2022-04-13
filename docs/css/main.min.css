@@ -2378,6 +2378,7 @@ header {
   display: flex;
   justify-content: center;
   padding: 22px 0;
+  border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
 }
 
