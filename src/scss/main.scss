@@ -1889,7 +1889,6 @@ body {
     z-index: 1;
     opacity: 0;
     cursor: pointer !important;
-
   }
 }
 
@@ -3530,5 +3529,34 @@ body {
   .mail-example__item .close-modal {
     right: 5px;
     top: 5px;
+  }
+}
+
+.tooltip-el__modal {
+  .snippet-example {
+    padding: 8px 0;
+    line-height: 140%;
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #BEC4CF;
+    }
+
+    .term {
+      margin-bottom: 10px;
+      font-size: 16px;
+      flex: 0 0 40%;
+      display: inline;
+      font-weight: 600;
+      font-style: italic;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
   }
 }

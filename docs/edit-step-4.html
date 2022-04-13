@@ -34,10 +34,9 @@
                         <span>LIVE</span>
                     </div>
                     <div class="header__navigation">
-                        <a href="#" class="navigation__btn active">
+                        <a href="#" class="navigation__btn">
                             <span class="mob-hid">Appointment</span>
                             <div class="mob-ico">
-                                <!-- Svg Vector Icons : http://www.onlinewebfonts.com/icon -->
                                 <svg version="1.1" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
                                     <g>
                                         <path d="M377.5,503.4H163.1v61.2h214.4V503.4L377.5,503.4z M163.1,717.8h214.4v-61.2H163.1V717.8L163.1,717.8z M745,472.8c-135.1,0-245,109.9-245,245c0,135.1,109.9,245,245,245c135.1,0,245-109.9,245-245C990,582.7,880.1,472.8,745,472.8L745,472.8z M745,901.5c-101.3,0-183.7-82.4-183.7-183.8C561.3,616.4,643.7,534,745,534c101.3,0,183.8,82.4,183.8,183.8C928.8,819.1,846.3,901.5,745,901.5L745,901.5z M101.9,809.7c-8.2,0-15.8-3.2-21.6-9c-5.8-5.8-9-13.5-9-21.6V411.5h708.6c19.9,2.8,39,8,57.1,15.3v-15.3v-61.2V197.2c0-24.6-9.6-47.6-26.9-65c-17.4-17.3-40.4-26.9-65-26.9h-61.3V37.2h-61.3v68.1H255V37.2h-61.3v68.1h-91.9c-24.5,0-47.6,9.6-65,26.9c-17.3,17.3-26.9,40.4-26.9,65V779c0,24.5,9.6,47.6,26.9,65c17.4,17.3,40.5,26.9,65,26.9h388.2c-14.8-18.4-27-39-36-61.3H101.9L101.9,809.7z M71.2,258.4v-41.1v-20.1c0-8.2,3.2-15.8,9-21.6c5.8-5.8,13.5-9,21.6-9h91.9v91.9H255v-91.9h367.5v91.9h61.3v-91.9H745c8.2,0,15.8,3.2,21.7,9c5.8,5.8,9,13.5,9,21.6v21.1v41.1v90.9H71.2V258.4L71.2,258.4z M775.6,595.3h-61.3v91.9v30.6v30.6h153.1v-61.3h-91.9V595.3L775.6,595.3z" />
@@ -45,7 +44,7 @@
                                 </svg>
                             </div>
                         </a>
-                        <a href="#" class="navigation__btn">
+                        <a href="#" class="navigation__btn active">
                             <span class="mob-hid">Settings</span>
                             <div class="mob-ico">
                                 <svg version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 489.8 489.8" style="enable-background:new 0 0 489.8 489.8;" xml:space="preserve">
@@ -91,6 +90,7 @@
         </div>
     </header>
 
+
 <main class="main">
     <section>
         <div class="stisky__wrapper">
@@ -121,19 +121,65 @@
                                                 <input class="styles-text-input" type="text" value="{event_name} Confirmation" name="" data-styles-field>
                                                 <span class="styles-text">Subject Line</span>
                                             </label>
-                                            <div class="tooltip-el" data-tippy-content="Event name">!</div>
+                                            <div class="tooltip-el" data-show-template-modal="1">!</div>
+                                            <div class="modal__wrapper tooltip-el__modal" id="data-show-template-modal-1">
+                                                <div class="appointment-cancel-modal">
+                                                    <div class="close-modal" data-close-modal>
+                                                    </div>
+                                                    <h4 class="litle-title">Snippet examples</h4>
+                                                    <div class="snippet-example"><span class="term">{event_name}&nbsp;</span>
+                                                        The name of the event you are setting up
+                                                    </div>
+                                                    <div class="snippet-example">
+                                                        <span class="term">{patient_name}&nbsp;</span>The name of the patient that he indicated in the appointment form
+                                                    </div>
+                                                    <div class="snippet-example">
+                                                        <span class="term">{event_description}&nbsp;</span>Description of the event that you want to describe somehow
+                                                    </div>
+                                                    <div class="snippet-example"><span class="term">{event_name}&nbsp;</span>
+                                                        The name of the event you are setting up
+                                                    </div>
+                                                    <div class="snippet-example">
+                                                        <span class="term">{patient_name}&nbsp;</span>The name of the patient that he indicated in the appointment form
+                                                    </div>
+                                                    <div class="snippet-example">
+                                                        <span class="term">{event_description}&nbsp;</span>Description of the event that you want to describe somehow
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="tooltip-wrapper area">
                                             <label class="styles-label">
-                                                <textarea class="styles-textarea" name="event-details" data-styles-field>
-Hi {patient_name}, 
-
-You’re all set. Your {event_name} has been scheduled.
-{event_description}
+                                                <textarea class="styles-textarea" name="event-details" data-styles-field>Hi {patient_name},<br>You’re all set. Your {event_name} has been scheduled.{event_description}
                                                     </textarea>
                                                 <span class="styles-text">Email Body</span>
                                             </label>
-                                            <div class="tooltip-el" data-tippy-content="Email Body">!</div>
+                                            <div class="tooltip-el" data-show-template-modal="2">!</div>
+                                            <div class="modal__wrapper tooltip-el__modal" id="data-show-template-modal-2">
+                                                <div class="appointment-cancel-modal">
+                                                    <div class="close-modal" data-close-modal>
+                                                    </div>
+                                                    <h4 class="litle-title">Snippet examples</h4>
+                                                    <div class="snippet-example"><span class="term">{event_name}&nbsp;</span>
+                                                        The name of the event you are setting up
+                                                    </div>
+                                                    <div class="snippet-example">
+                                                        <span class="term">{patient_name}&nbsp;</span>The name of the patient that he indicated in the appointment form
+                                                    </div>
+                                                    <div class="snippet-example">
+                                                        <span class="term">{event_description}&nbsp;</span>Description of the event that you want to describe somehow
+                                                    </div>
+                                                    <div class="snippet-example"><span class="term">{event_name}&nbsp;</span>
+                                                        The name of the event you are setting up
+                                                    </div>
+                                                    <div class="snippet-example">
+                                                        <span class="term">{patient_name}&nbsp;</span>The name of the patient that he indicated in the appointment form
+                                                    </div>
+                                                    <div class="snippet-example">
+                                                        <span class="term">{event_description}&nbsp;</span>Description of the event that you want to describe somehow
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="list-item__col" data-open-example="1">
@@ -200,7 +246,32 @@ You’re all set. Your {event_name} has been scheduled.
                                                 <input class="styles-text-input" type="text" value="{event_name} Confirmation" name="" data-styles-field>
                                                 <span class="styles-text">Subject Line</span>
                                             </label>
-                                            <div class="tooltip-el" data-tippy-content="Event name">!</div>
+                                            <div class="tooltip-el" data-show-template-modal="3">!</div>
+                                            <div class="modal__wrapper tooltip-el__modal" id="data-show-template-modal-3">
+                                                <div class="appointment-cancel-modal">
+                                                    <div class="close-modal" data-close-modal>
+                                                    </div>
+                                                    <h4 class="litle-title">Snippet examples</h4>
+                                                    <div class="snippet-example"><span class="term">{event_name}&nbsp;</span>
+                                                        The name of the event you are setting up
+                                                    </div>
+                                                    <div class="snippet-example">
+                                                        <span class="term">{patient_name}&nbsp;</span>The name of the patient that he indicated in the appointment form
+                                                    </div>
+                                                    <div class="snippet-example">
+                                                        <span class="term">{event_description}&nbsp;</span>Description of the event that you want to describe somehow
+                                                    </div>
+                                                    <div class="snippet-example"><span class="term">{event_name}&nbsp;</span>
+                                                        The name of the event you are setting up
+                                                    </div>
+                                                    <div class="snippet-example">
+                                                        <span class="term">{patient_name}&nbsp;</span>The name of the patient that he indicated in the appointment form
+                                                    </div>
+                                                    <div class="snippet-example">
+                                                        <span class="term">{event_description}&nbsp;</span>Description of the event that you want to describe somehow
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="tooltip-wrapper area">
                                             <label class="styles-label">
@@ -212,7 +283,32 @@ You’re all set. Your {event_name} has been scheduled.
                                                     </textarea>
                                                 <span class="styles-text">Email Body</span>
                                             </label>
-                                            <div class="tooltip-el" data-tippy-content="Email Body">!</div>
+                                            <div class="tooltip-el" data-show-template-modal="5">!</div>
+                                            <div class="modal__wrapper tooltip-el__modal" id="data-show-template-modal-5">
+                                                <div class="appointment-cancel-modal">
+                                                    <div class="close-modal" data-close-modal>
+                                                    </div>
+                                                    <h4 class="litle-title">Snippet examples</h4>
+                                                    <div class="snippet-example"><span class="term">{event_name}&nbsp;</span>
+                                                        The name of the event you are setting up
+                                                    </div>
+                                                    <div class="snippet-example">
+                                                        <span class="term">{patient_name}&nbsp;</span>The name of the patient that he indicated in the appointment form
+                                                    </div>
+                                                    <div class="snippet-example">
+                                                        <span class="term">{event_description}&nbsp;</span>Description of the event that you want to describe somehow
+                                                    </div>
+                                                    <div class="snippet-example"><span class="term">{event_name}&nbsp;</span>
+                                                        The name of the event you are setting up
+                                                    </div>
+                                                    <div class="snippet-example">
+                                                        <span class="term">{patient_name}&nbsp;</span>The name of the patient that he indicated in the appointment form
+                                                    </div>
+                                                    <div class="snippet-example">
+                                                        <span class="term">{event_description}&nbsp;</span>Description of the event that you want to describe somehow
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="list-item__col" data-open-example="2">
@@ -282,7 +378,32 @@ You’re all set. Your {event_name} has been scheduled.
                                                 <input class="styles-text-input" type="text" value="{event_name} Confirmation" name="" data-styles-field>
                                                 <span class="styles-text">Subject Line</span>
                                             </label>
-                                            <div class="tooltip-el" data-tippy-content="Event name">!</div>
+                                            <div class="tooltip-el" data-show-template-modal="6">!</div>
+                                            <div class="modal__wrapper tooltip-el__modal" id="data-show-template-modal-6">
+                                                <div class="appointment-cancel-modal">
+                                                    <div class="close-modal" data-close-modal>
+                                                    </div>
+                                                    <h4 class="litle-title">Snippet examples</h4>
+                                                    <div class="snippet-example"><span class="term">{event_name}&nbsp;</span>
+                                                        The name of the event you are setting up
+                                                    </div>
+                                                    <div class="snippet-example">
+                                                        <span class="term">{patient_name}&nbsp;</span>The name of the patient that he indicated in the appointment form
+                                                    </div>
+                                                    <div class="snippet-example">
+                                                        <span class="term">{event_description}&nbsp;</span>Description of the event that you want to describe somehow
+                                                    </div>
+                                                    <div class="snippet-example"><span class="term">{event_name}&nbsp;</span>
+                                                        The name of the event you are setting up
+                                                    </div>
+                                                    <div class="snippet-example">
+                                                        <span class="term">{patient_name}&nbsp;</span>The name of the patient that he indicated in the appointment form
+                                                    </div>
+                                                    <div class="snippet-example">
+                                                        <span class="term">{event_description}&nbsp;</span>Description of the event that you want to describe somehow
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="tooltip-wrapper area">
                                             <label class="styles-label">
@@ -294,7 +415,32 @@ You’re all set. Your {event_name} has been scheduled.
                                                     </textarea>
                                                 <span class="styles-text">Email Body</span>
                                             </label>
-                                            <div class="tooltip-el" data-tippy-content="Email Body">!</div>
+                                            <div class="tooltip-el" data-show-template-modal="7">!</div>
+                                            <div class="modal__wrapper tooltip-el__modal" id="data-show-template-modal-7">
+                                                <div class="appointment-cancel-modal">
+                                                    <div class="close-modal" data-close-modal>
+                                                    </div>
+                                                    <h4 class="litle-title">Snippet examples</h4>
+                                                    <div class="snippet-example"><span class="term">{event_name}&nbsp;</span>
+                                                        The name of the event you are setting up
+                                                    </div>
+                                                    <div class="snippet-example">
+                                                        <span class="term">{patient_name}&nbsp;</span>The name of the patient that he indicated in the appointment form
+                                                    </div>
+                                                    <div class="snippet-example">
+                                                        <span class="term">{event_description}&nbsp;</span>Description of the event that you want to describe somehow
+                                                    </div>
+                                                    <div class="snippet-example"><span class="term">{event_name}&nbsp;</span>
+                                                        The name of the event you are setting up
+                                                    </div>
+                                                    <div class="snippet-example">
+                                                        <span class="term">{patient_name}&nbsp;</span>The name of the patient that he indicated in the appointment form
+                                                    </div>
+                                                    <div class="snippet-example">
+                                                        <span class="term">{event_description}&nbsp;</span>Description of the event that you want to describe somehow
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="list-item__col" data-open-example="3">
@@ -310,26 +456,24 @@ You’re all set. Your {event_name} has been scheduled.
                                         </div>
                                         <div class="modal-example">
                                             <div style="font-family: 'Montserrat', sans-serif; font-size: 14px;color:#1F2B3D;overflow: hidden;margin: 0;position: relative;">
-                                                <div style="background-color: rgba(255, 252, 192, 0.3);">
+                                                <div style="background-color: rgba(255, 218, 218, 0.3);">
                                                     <div style="padding: 1.125em 2.625em 1.75em 2.625em;max-width:37.5em;margin: auto;text-align: center;box-sizing:border-box;" class='ismob'>
                                                         <div style="width: 6.875em;height: 2.5em; overflow: hidden;margin:auto;margin-bottom: 1.25em;">
                                                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/ZDF_logo%21_Logo_2021.svg/1200px-ZDF_logo%21_Logo_2021.svg.png" alt="" style="height: 100%; object-fit: contain;">
                                                         </div>
-                                                        <div style="height: 2.125em;width: 2.125em;border-radius:50%;background: #FFFCC0;margin:auto;margin-bottom: 0.875em;display: flex;align-items: center;justify-content: center;">
-                                                            <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M3 4C2.44772 4 2 4.44772 2 5V19C2 19.5523 2.44772 20 3 20H17C17.5523 20 18 19.5523 18 19V5C18 4.44772 17.5523 4 17 4H3ZM0 5C0 3.34315 1.34315 2 3 2H17C18.6569 2 20 3.34315 20 5V19C20 20.6569 18.6569 22 17 22H3C1.34315 22 0 20.6569 0 19V5Z" fill="black" />
-                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M14 0C14.5523 0 15 0.447715 15 1V5C15 5.55228 14.5523 6 14 6C13.4477 6 13 5.55228 13 5V1C13 0.447715 13.4477 0 14 0Z" fill="black" />
-                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6 0C6.55228 0 7 0.447715 7 1V5C7 5.55228 6.55228 6 6 6C5.44772 6 5 5.55228 5 5V1C5 0.447715 5.44772 0 6 0Z" fill="black" />
-                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 9C0 8.44771 0.447715 8 1 8H19C19.5523 8 20 8.44771 20 9C20 9.55228 19.5523 10 19 10H1C0.447715 10 0 9.55228 0 9Z" fill="black" />
+                                                        <div style="height: 2.125em;width: 2.125em;border-radius:50%;background: #FFDADA;margin:auto;margin-bottom: 0.875em;display: flex;align-items: center;justify-content: center;">
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M4 4L20 20" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                                <path d="M20 4L4 20" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                                             </svg>
                                                         </div>
-                                                        <span style="font-size: 1.5em; font-weight: 600;">Your appointment has been</br> rescheduled.</span>
+                                                        <span style="font-size: 1.5em; font-weight: 600;">Your appointment has been</br> canceled.</span>
                                                     </div>
                                                 </div>
                                                 <div>
                                                     <div style="max-width: 37.5em;margin: auto;padding: 2.6875em;box-sizing:border-box;" class='ismob'>
                                                         <span style="font-size: 1.125em; font-weight: 600;margin-bottom: 0.5em; display: block; text-align: center;">Hi, John Doe</span>
-                                                        <span style="font-size: 1.125em; font-weight: 500;margin-bottom: 3.125em; display: block; text-align: center;">You’re all set. Your appointment has been</br> scheduled.</span>
+                                                        <span style="font-size: 1.125em; font-weight: 500;margin-bottom: 3.125em; display: block; text-align: center;">Your appointment has been canceled with Buckhead Primary Care Clinic at 7am on May 14.</span>
                                                         <div style="padding: 1.875em;border:1px solid #E1EAED;border-bottom:none">
                                                             <span style="font-size: 1.125em; font-weight: 600;margin-bottom: 0.5em; display: block;">Buckhead Primary Care Clinic</span>
                                                             <span style="font-size: 1em; font-weight: 500;margin-bottom: 0.5em; display: block; color:#4C5563;">1891 Howell Mill Road NW Suite A Atlanta, GA 30318 </span>
@@ -338,8 +482,7 @@ You’re all set. Your {event_name} has been scheduled.
                                                             <span style="font-size: 0.875em; font-weight: 500;display: block;">7:00 am - Wednesday, Aug 11, 2019 </span>
                                                         </div>
                                                         <div style="display: flex;flex-direction: column;align-items: center;">
-                                                            <button style="font-family: 'Montserrat', sans-serif;font-size: 1em; font-weight: 600; cursor:pointer;padding: 0.875em 1.5625em;margin-bottom: 0.5em;line-height: 120%; background: #2371E4;border-radius: 0.3125em; color: #fff; border: none;">Confirm Appointment</button>
-                                                            <button style="font-family: 'Montserrat', sans-serif;font-size: 1em; font-weight: 600; cursor:pointer; padding: 0.625em 1.5625em; border: none; background:transparent; color:#4C5563;">Cancel Appointment</button>
+                                                            <button style="font-family: 'Montserrat', sans-serif;font-size: 1em; font-weight: 600; cursor:pointer;padding: 0.875em 1.5625em;margin-bottom: 0.5em;line-height: 120%; background: #2371E4;border-radius: 0.3125em; color: #fff; border: none;">Schedule Appointment</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -364,7 +507,32 @@ You’re all set. Your {event_name} has been scheduled.
                                                 <input class="styles-text-input" type="text" value="{event_name} Confirmation" name="" data-styles-field>
                                                 <span class="styles-text">Subject Line</span>
                                             </label>
-                                            <div class="tooltip-el" data-tippy-content="Event name">!</div>
+                                            <div class="tooltip-el" data-show-template-modal="8">!</div>
+                                            <div class="modal__wrapper tooltip-el__modal" id="data-show-template-modal-8">
+                                                <div class="appointment-cancel-modal">
+                                                    <div class="close-modal" data-close-modal>
+                                                    </div>
+                                                    <h4 class="litle-title">Snippet examples</h4>
+                                                    <div class="snippet-example"><span class="term">{event_name}&nbsp;</span>
+                                                        The name of the event you are setting up
+                                                    </div>
+                                                    <div class="snippet-example">
+                                                        <span class="term">{patient_name}&nbsp;</span>The name of the patient that he indicated in the appointment form
+                                                    </div>
+                                                    <div class="snippet-example">
+                                                        <span class="term">{event_description}&nbsp;</span>Description of the event that you want to describe somehow
+                                                    </div>
+                                                    <div class="snippet-example"><span class="term">{event_name}&nbsp;</span>
+                                                        The name of the event you are setting up
+                                                    </div>
+                                                    <div class="snippet-example">
+                                                        <span class="term">{patient_name}&nbsp;</span>The name of the patient that he indicated in the appointment form
+                                                    </div>
+                                                    <div class="snippet-example">
+                                                        <span class="term">{event_description}&nbsp;</span>Description of the event that you want to describe somehow
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="tooltip-wrapper area">
                                             <label class="styles-label">
@@ -376,7 +544,32 @@ You’re all set. Your {event_name} has been scheduled.
                                                     </textarea>
                                                 <span class="styles-text">Email Body</span>
                                             </label>
-                                            <div class="tooltip-el" data-tippy-content="Email Body">!</div>
+                                            <div class="tooltip-el" data-show-template-modal="9">!</div>
+                                            <div class="modal__wrapper tooltip-el__modal" id="data-show-template-modal-9">
+                                                <div class="appointment-cancel-modal">
+                                                    <div class="close-modal" data-close-modal>
+                                                    </div>
+                                                    <h4 class="litle-title">Snippet examples</h4>
+                                                    <div class="snippet-example"><span class="term">{event_name}&nbsp;</span>
+                                                        The name of the event you are setting up
+                                                    </div>
+                                                    <div class="snippet-example">
+                                                        <span class="term">{patient_name}&nbsp;</span>The name of the patient that he indicated in the appointment form
+                                                    </div>
+                                                    <div class="snippet-example">
+                                                        <span class="term">{event_description}&nbsp;</span>Description of the event that you want to describe somehow
+                                                    </div>
+                                                    <div class="snippet-example"><span class="term">{event_name}&nbsp;</span>
+                                                        The name of the event you are setting up
+                                                    </div>
+                                                    <div class="snippet-example">
+                                                        <span class="term">{patient_name}&nbsp;</span>The name of the patient that he indicated in the appointment form
+                                                    </div>
+                                                    <div class="snippet-example">
+                                                        <span class="term">{event_description}&nbsp;</span>Description of the event that you want to describe somehow
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="list-item__col" data-open-example="4">

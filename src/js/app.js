@@ -109,6 +109,11 @@ document.addEventListener('click', (e) => {
     if (target.closest('[data-cancel-appointment]')) {
         document.querySelector('[data-cancel-appointment-modal]').classList.add('show');
     }
+
+    if (target.closest('[data-show-template-modal]')) {
+        const modalId = target.closest('[data-show-template-modal]').dataset.showTemplateModal;
+        document.querySelector(`#data-show-template-modal-${modalId}`).classList.add('show');
+    }
     //Закрыть модалку при нажатии на кнопку "no", крестик или фон модалки
     if (target.closest('.cancel__btn') || target.closest('[data-close-modal]') || (target.closest('.modal__wrapper.show') && !target.closest('.appointment-cancel-modal'))) {
         document.querySelector('.modal__wrapper.show').classList.remove('show');

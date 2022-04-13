@@ -3868,6 +3868,33 @@ body {
   pointer-events: none;
 }
 
+.tooltip-el__modal .snippet-example {
+  padding: 8px 0;
+  line-height: 140%;
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.tooltip-el__modal .snippet-example:not(:last-child) {
+  border-bottom: 1px solid #BEC4CF;
+}
+
+.tooltip-el__modal .snippet-example .term {
+  margin-bottom: 10px;
+  font-size: 16px;
+  flex: 0 0 40%;
+  display: inline;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.tooltip-el__modal .snippet-example:not(:last-child) {
+  margin-bottom: 10px;
+}
+
 @media screen and (max-width: 1480px) {
   html {
     font-size: 16px;
