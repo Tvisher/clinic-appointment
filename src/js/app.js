@@ -159,7 +159,6 @@ document.addEventListener('click', (e) => {
     }
 });
 
-
 // Аналог slidetoggle на чистом js
 function vanilaToggle(toggleContent, minMobSize, minPcSize, event) {
     let elemHeight = window.innerWidth < 576 ? minMobSize : minPcSize;
@@ -219,3 +218,30 @@ function getAnimationinputs() {
 }
 window.getAnimationinputs = getAnimationinputs;
 window.getAnimationinputs();
+
+
+// Фикс функции открытия тоглящихся элементов при ресайзе
+window.addEventListener('resize', (e) => {
+    const toggleElems = document.querySelectorAll('.working-hours__item');
+    if (toggleElems.length > 0) {
+        toggleElems.forEach(elem => {
+            let elemHeight = window.innerWidth < 576 ? "47px" : "64px";
+            if (!elem.classList.contains('show')) {
+                elem.style.height = elemHeight;
+            } else {
+                elem.style.height = 'auto';
+            }
+        });
+    }
+    const secondToggleElems = document.querySelectorAll('.shedule-body__time');
+    if (secondToggleElems.length > 0) {
+        secondToggleElems.forEach(elem => {
+            let elemHeight = window.innerWidth < 576 ? "45px" : "56px";
+            if (!elem.classList.contains('show')) {
+                elem.style.height = elemHeight;
+            } else {
+                elem.style.height = 'auto';
+            }
+        });
+    }
+})
