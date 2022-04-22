@@ -885,6 +885,16 @@ li {
   font-weight: 600;
   font-size: 16px;
   color: $brand-gray;
+  transition: color .3s ease, transform .3s ease;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+
+  &:hover {
+    color: $brand-blue;
+    transform: scale(1.1) translateZ(0);
+  }
+
 }
 
 
@@ -1822,6 +1832,16 @@ body {
 
     }
 
+    &:not(.active):hover {
+      .list-item__name {
+        color: $brand-blue;
+      }
+
+      // .list-item__counter {
+      //   background: #91e6f9;
+      // }
+    }
+
     &.active {
       .list-item__name {
         color: $brand-black;
@@ -1848,6 +1868,7 @@ body {
   .list-item__name {
     font-weight: 500;
     margin-right: 3px;
+    transition: color .3s ease;
   }
 
   .list-item__counter {
@@ -1858,6 +1879,7 @@ body {
     line-height: 143%;
     color: $brand-black;
     font-weight: 500;
+    transition: background-color .3s ease;
 
     &:empty {
       display: none;
@@ -1976,10 +1998,19 @@ body {
     justify-content: flex-start;
     padding: 5px 0;
 
+    &:hover {
+      .show-details__text {
+        transform: scale3d(1.1, 1.1, 1.1) translate3d(0, 0, 0);
+      }
+    }
+
     .show-details__text {
-      transition: font-size .4s ease, color .4s ease;
+      transition: font-size .4s ease, color .4s ease, transform .3s ease;
       margin-right: 12px;
       color: $brand-blue;
+      will-change: transform;
+      backface-visibility: hidden;
+      -webkit-font-smoothing: subpixel-antialiased;
     }
 
     .show-details__ico {
@@ -2012,9 +2043,19 @@ body {
 }
 
 .cancel-btn {
+  padding: 5px 0;
+  width: fit-content;
   margin-top: 36px;
   cursor: pointer;
   color: $brand-blue;
+  transition: transform .3s ease;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+
+  &:hover {
+    transform: scale3d(1.1, 1.1, 1.1) translate3d(0, 0, 0);
+  }
 }
 
 .shedule-body__day {
@@ -2269,6 +2310,8 @@ body {
 
   transition: transform .3s ease-in-out;
   will-change: transform;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
 
   &:hover {
     transform: scale(1.2);
@@ -2524,9 +2567,18 @@ body {
   display: flex;
 
   button {
+    padding: 3px;
     color: $brand-blue;
     font-weight: 500;
     font-size: 14px;
+    transition: transform .3s ease;
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+
+    &:hover {
+      transform: scale(1.1) translateZ(0);
+    }
   }
 
   .close-modal {
@@ -2543,6 +2595,14 @@ body {
   padding: 3px;
   font-weight: 600;
   color: $brand-blue;
+  transition: transform .3s ease;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+
+  &:hover {
+    transform: scale(1.1) translateZ(0);
+  }
 }
 
 @media (max-width: 992px) {
@@ -3480,9 +3540,18 @@ body {
 
 .mail-example__letter {
   margin: auto;
-  pointer-events: none;
+  // pointer-events: none;
+  cursor: pointer;
   max-width: 163px;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.08);
+  will-change: transform;
+  transition: transform .3s ease;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+
+  &:hover {
+    transform: scale3d(1.1, 1.1, 1.1) translate3d(0, 0, 0);
+  }
 }
 
 .mail-example__item {
