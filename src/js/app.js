@@ -109,6 +109,14 @@ document.addEventListener('click', (e) => {
     if (target.closest('[data-cancel-appointment]')) {
         document.querySelector('[data-cancel-appointment-modal]').classList.add('show');
     }
+    // Открыть модалку с добавлением события/
+    if (target.closest('[data-add-event]')) {
+        document.querySelector('[data-add-event-modal]').classList.add('show');
+    }
+    // Открыть модалку с добавлением нового поля в запись
+    if (target.closest('[data-add-field]')) {
+        document.querySelector('[data-add-field-modal]').classList.add('show');
+    }
 
     if (target.closest('[data-show-template-modal]')) {
         const modalId = target.closest('[data-show-template-modal]').dataset.showTemplateModal;
@@ -155,7 +163,6 @@ document.addEventListener('click', (e) => {
     if (target.closest('[data-open-example]')) {
         const modalId = target.closest('[data-open-example]').dataset.openExample;
         document.querySelector(`#modal-example-${modalId}`).classList.add('show');
-
     }
 });
 
