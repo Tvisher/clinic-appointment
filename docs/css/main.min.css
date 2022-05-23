@@ -4022,6 +4022,13 @@ body {
   margin-bottom: 10px;
 }
 
+[data-styles-field]:not(:placeholder-shown) ~ .styles-text,
+[data-styles-field]:focus ~ .styles-text {
+  font-size: 12px;
+  top: 5px;
+  color: #a6aab1;
+}
+
 @media screen and (max-width: 1480px) {
   html {
     font-size: 16px;
