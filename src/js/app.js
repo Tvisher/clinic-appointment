@@ -1,6 +1,6 @@
 'use strict';
 
-import AirDatepicker from 'air-datepicker';
+// import AirDatepicker from 'air-datepicker';
 import localeEn from 'air-datepicker/locale/en.js';
 
 //глобальное обьявление тултипов
