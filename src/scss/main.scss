@@ -16,8 +16,7 @@
   -ms-user-select: none;
   /* Internet Explorer/Edge */
   user-select: none;
-  /* Non-prefixed version, currently
-                                  not supported by any browser */
+  /* Non-prefixed version, currently not supported by any browser */
 }
 
 @keyframes whiteShadow {
@@ -1081,10 +1080,13 @@ li {
   }
 
   .duration-block__field {
+    &.special {
+      margin-bottom: 20px;
+    }
     flex-direction: column;
     align-items: flex-start;
     // margin-bottom: 20px !important;
-
+    gap: 15px;
     .flex-row {
       order: -1;
       margin-bottom: 10px;
@@ -1433,6 +1435,21 @@ li {
       border-color: $brand-blue;
     }
 
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &:not(:checked) + .checkbox-name {
+    opacity: 0.7;
+  }
+
+  &:disabled + .checkbox-name {
+    cursor: not-allowed !important;
+    &::before {
+      background: rgba(0, 0, 0, 0.4);
+      border-color: rgba(0, 0, 0, 0.1);
+    }
     &::after {
       opacity: 1;
     }
@@ -1862,7 +1879,10 @@ body {
     color: $brand-black;
     font-weight: 500;
     transition: background-color 0.3s ease;
-
+    min-width: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     &:empty {
       display: none;
     }
@@ -2089,6 +2109,9 @@ body {
     flex-wrap: wrap;
     padding: 10px;
     max-height: 45px;
+    &.show {
+      max-height: inherit;
+    }
   }
 
   .shedule-body__time .patient {
@@ -2892,6 +2915,9 @@ body {
 }
 
 .duration-block__field {
+  &.special {
+    margin-bottom: 40px;
+  }
   align-items: center;
   // margin-bottom: 65px !important;
 
@@ -3183,6 +3209,12 @@ body {
 
 .relative-wrapper {
   position: relative;
+  &.normal {
+    width: 100%;
+    .styles-label {
+      padding: 14px 10px 14px 20px;
+    }
+  }
 }
 
 .datapicker-label {
@@ -3206,7 +3238,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  opacity: 0;
+  // opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
 
@@ -3680,6 +3712,10 @@ body {
       margin-bottom: 10px;
     }
   }
+}
+
+.patient__hidden-info .info-title {
+  color: #4c5563;
 }
 
 [data-styles-field]:not(:placeholder-shown) ~ .styles-text,

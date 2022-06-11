@@ -1138,8 +1138,7 @@ th {
   -ms-user-select: none;
   /* Internet Explorer/Edge */
   user-select: none;
-  /* Non-prefixed version, currently
-                                  not supported by any browser */
+  /* Non-prefixed version, currently not supported by any browser */
 }
 
 @keyframes whiteShadow {
@@ -2250,6 +2249,23 @@ button {
   opacity: 1;
 }
 
+.form-checkbox:not(:checked) + .checkbox-name {
+  opacity: 0.7;
+}
+
+.form-checkbox:disabled + .checkbox-name {
+  cursor: not-allowed !important;
+}
+
+.form-checkbox:disabled + .checkbox-name::before {
+  background: rgba(0, 0, 0, 0.4);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.form-checkbox:disabled + .checkbox-name::after {
+  opacity: 1;
+}
+
 .widget-template__label {
   cursor: pointer;
   position: relative;
@@ -2593,6 +2609,10 @@ body {
   color: #1F2B3D;
   font-weight: 500;
   transition: background-color 0.3s ease;
+  min-width: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .date-range__date-list .list-item__counter:empty {
@@ -3442,6 +3462,10 @@ body {
   align-items: center;
 }
 
+.duration-block__field.special {
+  margin-bottom: 40px;
+}
+
 .duration-block__field .styles-label {
   max-width: 250px;
   margin-right: 20px;
@@ -3609,6 +3633,14 @@ body {
   position: relative;
 }
 
+.relative-wrapper.normal {
+  width: 100%;
+}
+
+.relative-wrapper.normal .styles-label {
+  padding: 14px 10px 14px 20px;
+}
+
 .datapicker-label {
   margin-bottom: 15px;
   max-width: 240px;
@@ -3629,7 +3661,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
 
@@ -4022,6 +4053,10 @@ body {
   margin-bottom: 10px;
 }
 
+.patient__hidden-info .info-title {
+  color: #4c5563;
+}
+
 [data-styles-field]:not(:placeholder-shown) ~ .styles-text,
 [data-styles-field]:focus ~ .styles-text {
   font-size: 12px;
@@ -4361,6 +4396,11 @@ body {
   .duration-block__field {
     flex-direction: column;
     align-items: flex-start;
+    gap: 15px;
+  }
+
+  .duration-block__field.special {
+    margin-bottom: 20px;
   }
 
   .duration-block__field .flex-row {
@@ -4532,6 +4572,10 @@ body {
     flex-wrap: wrap;
     padding: 10px;
     max-height: 45px;
+  }
+
+  .shedule-body__time.show {
+    max-height: inherit;
   }
 
   .shedule-body__time .patient {
