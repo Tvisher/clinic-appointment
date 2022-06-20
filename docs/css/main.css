@@ -357,7 +357,9 @@ th {
 }
 
 .air-datepicker-body--day-names {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: (var(--adp-day-cell-width))[7];
   grid-template-columns: repeat(7, var(--adp-day-cell-width));
   margin: 8px 0 3px;
 }
@@ -374,20 +376,24 @@ th {
 }
 
 .air-datepicker-body--cells {
+  display: -ms-grid;
   display: grid;
 }
 
 .air-datepicker-body--cells.-days- {
+  -ms-grid-columns: (var(--adp-day-cell-width))[7];
   grid-template-columns: repeat(7, var(--adp-day-cell-width));
   grid-auto-rows: var(--adp-day-cell-height);
 }
 
 .air-datepicker-body--cells.-months- {
+  -ms-grid-columns: (1fr)[3];
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: var(--adp-month-cell-height);
 }
 
 .air-datepicker-body--cells.-years- {
+  -ms-grid-columns: (1fr)[4];
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: var(--adp-year-cell-height);
 }
@@ -418,7 +424,8 @@ th {
   border-radius: var(--adp-border-radius);
   -webkit-user-select: none;
   -moz-user-select: none;
-  user-select: none;
+  -ms-user-select: none;
+      user-select: none;
 }
 
 .air-datepicker-nav--action:hover {
@@ -469,6 +476,7 @@ th {
 }
 
 .air-datepicker-buttons {
+  display: -ms-grid;
   display: grid;
   grid-auto-columns: 1fr;
   grid-auto-flow: column;
@@ -509,8 +517,11 @@ th {
 }
 
 .air-datepicker-time {
+  display: -ms-grid;
   display: grid;
   grid-template-columns: -webkit-max-content 1fr;
+  -ms-grid-columns: -webkit-max-content 1fr;
+  -ms-grid-columns: max-content 1fr;
   grid-template-columns: max-content 1fr;
   grid-column-gap: 12px;
   align-items: center;
@@ -788,11 +799,15 @@ th {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   border-radius: var(--adp-border-radius);
   box-sizing: content-box;
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr;
   grid-template-columns: 1fr;
+  -ms-grid-rows: (-webkit-max-content)[4];
   grid-template-rows: repeat(4, -webkit-max-content);
+  -ms-grid-rows: (max-content)[4];
   grid-template-rows: repeat(4, max-content);
-  grid-template-areas: var(--adp-grid-areas);
+      grid-template-areas: var(--adp-grid-areas);
   font-family: var(--adp-font-family), sans-serif;
   font-size: var(--adp-font-size);
   color: var(--adp-color);
@@ -1131,7 +1146,6 @@ th {
   /* iOS Safari */
   -webkit-user-select: none;
   /* Chrome/Safari/Opera */
-  -khtml-user-select: none;
   /* Konqueror */
   -moz-user-select: none;
   /* Firefox */
@@ -1139,6 +1153,20 @@ th {
   /* Internet Explorer/Edge */
   user-select: none;
   /* Non-prefixed version, currently not supported by any browser */
+}
+
+@-webkit-keyframes whiteShadow {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes whiteShadow {
@@ -1152,6 +1180,16 @@ th {
 
   100% {
     opacity: 0;
+  }
+}
+
+@-webkit-keyframes fromOpacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
 
@@ -1242,6 +1280,11 @@ li {
   padding: 0;
 }
 
+*::-moz-selection {
+  background: #1F2B3D;
+  color: #fff;
+}
+
 *::selection {
   background: #1F2B3D;
   color: #fff;
@@ -1274,6 +1317,8 @@ li {
   font-size: 16px;
   font-family: "Montserrat";
   display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   align-items: center;
   justify-content: center;
@@ -1504,7 +1549,8 @@ button {
 
 .widget-template__slider .swiper-slide {
   overflow: hidden;
-  animation: fromOpacity 1.5s ease-in-out;
+  -webkit-animation: fromOpacity 1.5s ease-in-out;
+          animation: fromOpacity 1.5s ease-in-out;
   will-change: auto;
   cursor: pointer;
   border-radius: 4px;
@@ -1756,7 +1802,8 @@ button {
   margin-bottom: 20px;
   flex: 0 0 50%;
   padding: 0px 8px;
-  animation: fromOpacity 0.3s ease;
+  -webkit-animation: fromOpacity 0.3s ease;
+          animation: fromOpacity 0.3s ease;
 }
 
 .widget-template__shedule .shedule__block-list {
@@ -1852,7 +1899,8 @@ button {
 .air-datepicker-nav--action svg {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   transform: translate(-1px, -3px);
 }
 
@@ -1943,6 +1991,8 @@ button {
 }
 
 .air-datepicker .air-datepicker-button {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   margin: auto;
   padding: 5px 15px;
@@ -2008,7 +2058,8 @@ button {
   color: #4C5563;
   transition: color 0.3s ease, transform 0.3s ease;
   will-change: transform;
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
@@ -2018,7 +2069,8 @@ button {
 }
 
 .spinner {
-  animation: rotate 2s linear infinite;
+  -webkit-animation: rotate 2s linear infinite;
+          animation: rotate 2s linear infinite;
   z-index: 2;
   position: absolute;
   top: 50%;
@@ -2031,12 +2083,36 @@ button {
 .spinner .path {
   stroke: #2371E4;
   stroke-linecap: round;
-  animation: dash 1.5s ease-in-out infinite;
+  -webkit-animation: dash 1.5s ease-in-out infinite;
+          animation: dash 1.5s ease-in-out infinite;
+}
+
+@-webkit-keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes rotate {
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
   }
 }
 
@@ -2130,13 +2206,15 @@ button {
   margin-left: auto;
 }
 
+.no-webp .calendar-link::after {
+  background-image: url("../img/calendar-ico.png"); }
+
 .calendar-link::after {
   flex: 0 0 auto;
   display: block;
   content: "";
   width: 31px;
   height: 31px;
-  background-image: url("../img/calendar-ico.png");
   background-repeat: no-repeat;
   background-size: contain;
   margin-left: 13px;
@@ -2182,7 +2260,9 @@ button {
 .info-table {
   margin: auto;
   max-width: 729px;
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: (1fr)[3];
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 0px;
   margin-bottom: 50px;
@@ -2193,7 +2273,9 @@ button {
 }
 
 .info-table .location {
-  grid-column-start: 1;
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  -ms-grid-column-span: 2;
   grid-column-end: 3;
   margin: 0;
   border: 1px solid #E1EAED;
@@ -2204,7 +2286,9 @@ button {
 
 .info-table .location.head-info {
   display: flex;
-  grid-column-start: 3;
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+  -ms-grid-column-span: 0;
   grid-column-end: 3;
   border: 1px solid #E1EAED;
   border-bottom: none;
@@ -2371,8 +2455,10 @@ button {
 .header__logo svg,
 .header__logo img {
   height: 100%;
-  object-fit: contain;
-  object-position: center;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
 }
 
 .header__navigation {
@@ -2441,8 +2527,10 @@ header {
 .navigation__btn .mob-ico svg {
   height: 100%;
   width: 100%;
-  object-fit: contain;
-  object-position: center;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
 }
 
 .header__user {
@@ -2450,7 +2538,8 @@ header {
   padding-left: 31px;
   display: flex;
   align-items: center;
-  align-self: stretch;
+  -ms-grid-row-align: stretch;
+      align-self: stretch;
 }
 
 .header__user .user__image {
@@ -2463,10 +2552,12 @@ header {
 
 .header__user .user__image img,
 .header__user .user__image svg {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
   height: 100%;
-  object-position: center;
+  -o-object-position: center;
+     object-position: center;
 }
 
 .header__user .user__menu-wrapper {
@@ -2526,6 +2617,7 @@ header {
   padding-right: 40px;
   max-width: 252px;
   margin-left: -252px;
+  position: -webkit-sticky;
   position: sticky;
   top: 107px;
   width: 100%;
@@ -2755,7 +2847,8 @@ body {
   margin-right: 12px;
   color: #2371E4;
   will-change: transform;
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
@@ -2787,13 +2880,16 @@ body {
 
 .cancel-btn {
   padding: 5px 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   margin-top: 36px;
   cursor: pointer;
   color: #2371E4;
   transition: transform 0.3s ease;
   will-change: transform;
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
@@ -2904,7 +3000,8 @@ body {
   top: 15px;
   transition: transform 0.3s ease-in-out;
   will-change: transform;
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
@@ -2948,6 +3045,8 @@ body {
 .institution-block .widget-template__warning {
   margin: initial;
   margin-bottom: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   max-width: initial;
 }
@@ -3184,7 +3283,8 @@ body {
   font-size: 14px;
   transition: transform 0.3s ease;
   will-change: transform;
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
@@ -3207,7 +3307,8 @@ body {
   color: #2371E4;
   transition: transform 0.3s ease;
   will-change: transform;
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
@@ -3606,9 +3707,11 @@ body {
 
 .add-logo-block__wrapper img,
 .add-logo-block__wrapper svg {
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   height: 100%;
-  object-position: center;
+  -o-object-position: center;
+     object-position: center;
   margin: auto;
 }
 
@@ -4006,7 +4109,8 @@ body {
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.08);
   will-change: transform;
   transition: transform 0.3s ease;
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
@@ -4064,6 +4168,18 @@ body {
 
 .patient__hidden-info .info-title {
   color: #4c5563;
+}
+
+[data-styles-field]:not(:-moz-placeholder-shown) ~ .styles-text {
+  font-size: 12px;
+  top: 5px;
+  color: #a6aab1;
+}
+
+[data-styles-field]:not(:-ms-input-placeholder) ~ .styles-text {
+  font-size: 12px;
+  top: 5px;
+  color: #a6aab1;
 }
 
 [data-styles-field]:not(:placeholder-shown) ~ .styles-text,
@@ -4350,6 +4466,8 @@ body {
   .info-table .user-data {
     align-items: center;
     justify-content: center;
+    -ms-grid-column: 1 !important;
+    -ms-grid-column-span: 3 !important;
     grid-column: 1/4 !important;
     border: 1px solid #E1EAED !important;
   }
@@ -4868,3 +4986,5 @@ body {
     padding-left: 10px;
   }
 }
+
+.webp .calendar-link::after { background-image: url(../img/calendar-ico.webp); }
