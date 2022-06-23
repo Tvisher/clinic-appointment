@@ -979,10 +979,12 @@ li {
 @media (max-width: 768px) {
   .working-hours__item.show .widget-template__shedule {
     overflow: visible;
+    width: 100%;
   }
 
   .working-hours__item .widget-template__shedule .shedule__block {
     min-width: initial;
+    width: 100%;
   }
 
   .working-hours__item {
@@ -2498,7 +2500,7 @@ body {
 }
 
 .working-hours__day {
-  min-width: 125px;
+  min-width: 150px;
   margin-right: 25px;
   margin-top: -3px;
   cursor: pointer;
