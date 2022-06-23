@@ -4256,6 +4256,17 @@ body {
   opacity: 1;
 }
 
+select.styles-text-input {
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='21' height='13' viewBox='0 0 21 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.3787 6.10484C11.2071 7.27641 9.30764 7.27641 8.13607 6.10484L2.66111 0.629875C2.08186 0.0506278 1.14272 0.0506276 0.563469 0.629875V0.629875C-0.0157787 1.20912 -0.0157797 2.14827 0.563468 2.72752L10.2492 12.4133C10.25 12.4141 10.2514 12.4141 10.2522 12.4133V12.4133C10.253 12.4125 10.2543 12.4125 10.2551 12.4133L10.257 12.4151C10.2588 12.417 10.2618 12.417 10.2637 12.4151L19.9512 2.72765C20.5304 2.14841 20.5304 1.20926 19.9512 0.630013V0.630013C19.3719 0.0507659 18.4328 0.0507657 17.8535 0.630013L12.3787 6.10484Z' fill='%23A6AAB1'/%3e%3c/svg%3e ");
+  background-repeat: no-repeat, repeat;
+  background-position: 99% 0%;
+  background-size: 12px;
+}
+
 @media screen and (max-width: 1480px) {
   html {
     font-size: 16px;
