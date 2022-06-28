@@ -2828,7 +2828,7 @@ body {
   }
 
   .styles-text-input {
-    background: transparent;
+    background-color: transparent;
     position: relative;
     font-size: 16px;
     color: $brand-black;
@@ -3804,4 +3804,23 @@ select.styles-text-input {
   background-repeat: no-repeat, repeat;
   background-position: 99% 0%;
   background-size: 12px;
+}
+
+.tooltip-wrapper {
+  flex-wrap: wrap;
+  .label-wrap {
+    flex: 0 0 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &._error {
+    .error-message {
+      color: red;
+      margin-top: 10px;
+    }
+    & > .styles-label {
+      border-color: red;
+    }
+  }
 }

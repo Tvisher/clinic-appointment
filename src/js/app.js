@@ -184,6 +184,7 @@ function vanilaToggle(toggleContent, minMobSize, minPcSize, event) {
 }
 
 
+
 // Фикс функции открытия тоглящихся элементов при ресайзе
 window.addEventListener('resize', (e) => {
     const toggleElems = document.querySelectorAll('.working-hours__item');
@@ -208,4 +209,6 @@ window.addEventListener('resize', (e) => {
             }
         });
     }
-})
+});
+
+
